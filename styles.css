@@ -1,0 +1,107 @@
+
+:root {
+  
+  
+    --background: #F2F2F0;
+    --color: #0D0503;
+    --border: #d67728;
+    --card: #a3695b;
+    --button: #731F0D;
+    --hover: #382503;
+  
+
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--color);
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        'header header header'
+        'left main right'
+        'footer footer footer';
+    grid-template-columns: 400px 2fr 200px;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+.header {
+    grid-area: header;
+    background-color: var(--card);
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.left {
+    width: 270px; /* Increase this value to make the sidebar wider */
+
+    grid-area: left;
+    background-color: var(--card);
+    padding: 10px;
+    border-right: 1px solid var(--border);
+    
+
+}
+
+.main {
+
+    grid-area: main;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+
+.right {
+    grid-area: right;
+    background-color: var(--card);
+    padding: 10px;
+    border-left: 1px solid var(--border);
+}
+
+.footer {
+    grid-area: footer;
+    background-color: var(--card);
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    max-height: 100px;
+
+}
+
+.component {
+
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: var(--background);
+    border: 3px solid var(--border);
+    border-radius: 5px;
+    color: var(--color);
+}
+.containerTxt{
+    display: flex;
+    align-items: left; /* Aligns items vertically */
+    gap: 10px; /* Space between image and text */
+    }
+img {
+    width: 40%; /* Adjust width as needed */
+    height: auto;
+}
+
+button {
+    background-color: var(--button);
+    color: var(--color);
+    border: 1px solid var(--border);
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: var(--hover);
+}
