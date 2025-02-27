@@ -39,7 +39,7 @@ body {
 }
 
 .left {
-    width: 270px; /* Increase this value to make the sidebar wider */
+    width: 370px; /* Increase this value to make the sidebar wider */
 
     grid-area: left;
     background-color: var(--card);
@@ -82,6 +82,7 @@ body {
     border: 3px solid var(--border);
     border-radius: 5px;
     color: var(--color);
+    box-shadow: 10px 5px 5px #731F0D;
 }
 .containerTxt{
     display: flex;
