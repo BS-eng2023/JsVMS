@@ -13,14 +13,16 @@
         
     <div class="container">
         <div class="header">
-            <h1>Vehicle Management System</h1>
-            <img src="C:\JsProject\assets\images.jpg" alt="Auto"> 
+            <h1><img src="./assets/images/VMS_Icon.jpg" class="icon-image" ><style color: #0077; ;></style> Vehicle Management System  <img src="./assets/images/VMS_Icon.jpg" class="icon-image" ></h1>
+            
 
         </div>
         <div class="left">
             <h2>Linke Seite</h2>
             <p>Hier ist der linke Bereich.</p>
             <button id="applyFilters">Filter Cars</button>
+            <div>"    "</div> 
+            <button id="addNewCar">Add new car</button>
                </div>
         <div class="main">
             <h2>Hauptinhalt</h2>
@@ -79,8 +81,15 @@
         </div>
         
         <div class="right">
-            <h2>Rechte Seite</h2>
-            <p>Hier ist der rechte Bereich.</p>
+            <h2>Filter Cars</h2>
+            <input type="text" id="search" placeholder="Search by title...">
+            <select id="brand-filter">
+                <option value="">All Brands</option>
+            </select>
+            <select id="fuel-filter">
+                <option value="">All Fuel Types</option>
+            </select>
+            <button onclick="applyFilters()">Filter</button>
         </div>
         <div class="footer">
             <h6>Footer</h6>

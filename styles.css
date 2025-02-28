@@ -24,7 +24,7 @@ body {
     grid-template-areas:
         'header header header'
         'left main right'
-        'footer footer footer';
+        'footer footer right';
     grid-template-columns: 200px 2fr auto;
     grid-template-rows: auto 1fr auto;
     height: 100vh;
@@ -58,11 +58,13 @@ body {
 
 
 .right {
-    width:10px;
+    width:10%;
     grid-area: right;
     background-color: var(--card);
     padding: 10px;
     border-left: 1px solid var(--border);
+    display: none; /* Hide the right section by default */
+
 }
 /*
 .right:hover {
@@ -70,7 +72,8 @@ body {
 
 
 .rightSearchClicked{
-    width: 600px; /* Breite beim Hover */
+    width: 500px; /* Breite beim Hover */
+    display: block;
 
 }
 .footer {
@@ -103,6 +106,36 @@ img {
     height: auto;
 }
 
+.icon-image {
+    width: 70px;
+    height: 70px;
+}
+.car-listing {
+    border: 3px solid #a78412;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f0f5b0;
+    border-radius: 5px;
+}
+.car-container {
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+    gap: 20px; /* Space between image and text */
+    border: 2px solid #ddd; /* Optional border */
+    padding: 10px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.car-image {
+    width: 30%; /* Adjust size */
+    height: auto;
+    border-radius: 5px; /* Optional rounded corners */
+}
+
+.car-info {
+    flex-grow: 1; /* Takes up remaining space */
+}
 button {
     background-color: var(--button);
     color: var(--color);
