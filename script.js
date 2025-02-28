@@ -23,7 +23,7 @@
         }
 
         const xhr = new XMLHttpRequest();
-        xhr.open('get', './asses/cars.json');
+        xhr.open('get', './asstes/cars.json');
         xhr.addEventListener('load', () => {
             if (xhr.status == 200) {
                 let response = JSON.parse(xhr.response);
