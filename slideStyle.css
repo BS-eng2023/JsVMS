@@ -12,6 +12,7 @@
 
 }
 
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -25,12 +26,12 @@ body {
         'header header header'
         'left main right'
         'footer footer footer';
-    grid-template-columns: 200px 2fr auto;
+    grid-template-columns: auto 1fr 200px;
     grid-template-rows: auto 1fr auto;
     height: 100vh;
 }
 
-.header {
+.header, .footer {
     grid-area: header;
     background-color: var(--card);
     padding: 10px;
@@ -38,69 +39,46 @@ body {
     border-bottom: 1px solid var(--border);
 }
 
-.left {
-    width: 180px; /* Increase this value to make the sidebar wider */
+.footer {
+    grid-area: footer;
+    border-top: 1px solid var(--border);
+}
 
+.left {
     grid-area: left;
     background-color: var(--card);
+    width: 40%; /* Start schmal */
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width 0.3s ease-in-out;
     padding: 10px;
     border-right: 1px solid var(--border);
-    
+}
 
+.left:hover {
+    width: 300px; /* Breite beim Hover */
 }
 
 .main {
-
     grid-area: main;
     padding: 10px;
     overflow-y: auto;
 }
 
-
 .right {
-    width:10px;
     grid-area: right;
     background-color: var(--card);
     padding: 10px;
     border-left: 1px solid var(--border);
 }
-/*
-.right:hover {
-    width: 400px; /* Breite beim Hover  }*/
-
-
-.rightSearchClicked{
-    width: 600px; /* Breite beim Hover */
-
-}
-.footer {
-    grid-area: footer;
-    background-color: var(--card);
-    padding: 10px;
-    text-align: center;
-    border-top: 1px solid var(--border);
-    max-height: 100px;
-
-}
 
 .component {
-
     margin-bottom: 20px;
     padding: 15px;
     background-color: var(--background);
-    border: 3px solid var(--border);
+    border: 1px solid var(--border);
     border-radius: 5px;
     color: var(--color);
-    box-shadow: 10px 5px 5px #731F0D;
-}
-.containerTxt{
-    display: flex;
-    align-items: left; /* Aligns items vertically */
-    gap: 10px; /* Space between image and text */
-    }
-img {
-    width: 40%; /* Adjust width as needed */
-    height: auto;
 }
 
 button {

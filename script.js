@@ -37,7 +37,13 @@
         const init = () => {
             // Erst absenden, wenn das DOM fertig geladen ist
             xhr.send();
+            const button = document.querySelector("#applyFilters");
 
+            // Füge ein Click-Event hinzu
+            button.addEventListener("click", function () {
+                let right= document.querySelector(".right");
+                right.classList.toggle("rightSearchClicked");
+            });
         }
 
         // INIT

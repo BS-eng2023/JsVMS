@@ -25,7 +25,7 @@ body {
         'header header header'
         'left main right'
         'footer footer footer';
-    grid-template-columns: 200px 2fr auto;
+    grid-template-columns: 400px 2fr 200px;
     grid-template-rows: auto 1fr auto;
     height: 100vh;
 }
@@ -39,7 +39,7 @@ body {
 }
 
 .left {
-    width: 180px; /* Increase this value to make the sidebar wider */
+    width: 370px; /* Increase this value to make the sidebar wider */
 
     grid-area: left;
     background-color: var(--card);
@@ -58,21 +58,12 @@ body {
 
 
 .right {
-    width:10px;
     grid-area: right;
     background-color: var(--card);
     padding: 10px;
     border-left: 1px solid var(--border);
 }
-/*
-.right:hover {
-    width: 400px; /* Breite beim Hover  }*/
 
-
-.rightSearchClicked{
-    width: 600px; /* Breite beim Hover */
-
-}
 .footer {
     grid-area: footer;
     background-color: var(--card);
