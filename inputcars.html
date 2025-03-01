@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrzeugauswahl</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        select, input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Auto-Modell Auswahl</h2>
+
+    <!-- Marke (Brand) Auswahl -->
+    <label for="brand">Wähle eine Marke:</label>
+    <select id="brand">
+        <option value="">-- Bitte wählen --</option>
+        <option value="BMW">BMW</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="Audi">Audi</option>
+        <option value="Volkswagen">Volkswagen</option>
+        <option value="Ford">Ford</option>
+        <option value="Toyota">Toyota</option>
+        <option value="Opel">Opel</option>
+        <option value="Skoda">Skoda</option>
+        <option value="Tesla">Tesla</option>
+    </select>
+
+    <!-- Modell Auswahl -->
+    <label for="model">Wähle ein Modell:</label>
+    <select id="model" disabled>
+        <option value="">-- Bitte erst Marke wählen --</option>
+    </select>
+
+    <!-- Fahrzeugtyp Auswahl -->
+    <label for="type">Fahrzeugtyp:</label>
+    <select id="type">
+        <option value="">-- Bitte wählen --</option>
+        <option value="SUV">SUV</option>
+        <option value="Sedan">Sedan</option>
+        <option value="Coupe">Coupé</option>
+        <option value="Cabriolet">Cabriolet</option>
+        <option value="Kombi">Kombi</option>
+        <option value="Pickup">Pickup</option>
+        <option value="Van">Van</option>
+        <option value="Sportwagen">Sportwagen</option>
+        <option value="Elektro">Elektro</option>
+    </select>
+
+    <!-- Additional Car Details -->
+    <label for="mileage">Kilometerstand:</label>
+    <input type="number" id="mileage" placeholder="z. B. 104000 km">
+
+    <label for="power">Leistung (PS):</label>
+    <input type="number" id="power" placeholder="z. B. 115 PS">
+
+    <label for="drive">Antriebsart:</label>
+    <select id="drive">
+        <option value="">-- Bitte wählen --</option>
+        <option value="Internal combustion engine">Verbrennungsmotor</option>
+        <option value="Hybrid">Hybrid</option>
+        <option value="Electric">Elektro</option>
+        <option value="Hydrogen">Wasserstoff</option>
+    </select>
+
+    <label for="fuel">Kraftstoff:</label>
+    <select id="fuel">
+        <option value="">-- Bitte wählen --</option>
+        <option value="Petrol">Benzin</option>
+        <option value="Diesel">Diesel</option>
+        <option value="Electric">Elektro</option>
+        <option value="Hybrid">Hybrid</option>
+    </select>
+
+    <label for="seats">Anzahl der Sitze:</label>
+    <input type="number" id="seats" placeholder="z. B. 5">
+
+    <label for="doors">Anzahl der Türen:</label>
+    <select id="doors">
+        <option value="">-- Bitte wählen --</option>
+        <option value="2/3">2/3 Türen</option>
+        <option value="4/5">4/5 Türen</option>
+    </select>
+
+    <label for="transmission">Getriebe:</label>
+    <select id="transmission">
+        <option value="">-- Bitte wählen --</option>
+        <option value="Manual">Manuell</option>
+        <option value="Automatic">Automatik</option>
+    </select>
+
+    <label for="emission">Emissionsklasse:</label>
+    <select id="emission">
+        <option value="">-- Bitte wählen --</option>
+        <option value="Euro4">Euro4</option>
+        <option value="Euro5">Euro5</option>
+        <option value="Euro6">Euro6</option>
+    </select>
+
+    <label for="registration">Erstzulassung:</label>
+    <input type="date" id="registration">
+
+    <label for="color">Farbe:</label>
+    <select id="color">
+        <option value="">-- Bitte wählen --</option>
+        <option value="White" style="background-color: white; color: black;">Weiß</option>
+        <option value="Black" style="background-color: black; color: white;">Schwarz</option>
+        <option value="Grey" style="background-color: grey; color: white;">Grau</option>
+        <option value="Silver" style="background-color: silver; color: black;">Silber</option>
+        <option value="Blue" style="background-color: blue; color: white;">Blau</option>
+        <option value="Red" style="background-color: red; color: white;">Rot</option>
+        <option value="Green" style="background-color: green; color: white;">Grün</option>
+        <option value="Yellow" style="background-color: yellow; color: black;">Gelb</option>
+        <option value="Orange" style="background-color: orange; color: black;">Orange</option>
+        <option value="Brown" style="background-color: brown; color: white;">Braun</option>
+        <option value="Beige" style="background-color: beige; color: black;">Beige</option>
+        <option value="Purple" style="background-color: purple; color: white;">Lila</option>
+        <option value="Pink" style="background-color: pink; color: black;">Rosa</option>
+        <option value="Gold" style="background-color: gold; color: black;">Gold</option>
+        <option value="Turquoise" style="background-color: turquoise; color: black;">Türkis</option>
+    </select>
+    </select></div>
+
+<script>
+    // Automarken und Modelle
+    const models = {
+        "BMW": ["1er", "3er", "5er", "7er", "X1", "X3", "X5", "X7"],
+        "Mercedes": ["A-Klasse", "C-Klasse", "E-Klasse", "S-Klasse", "GLC", "GLE", "G-Klasse"],
+        "Audi": ["A1", "A3", "A4", "A6", "Q3", "Q5", "Q7", "R8"],
+        "Volkswagen": ["Golf", "Passat", "Tiguan", "Touareg", "Polo", "Arteon"],
+        "Ford": ["Fiesta", "Focus", "Mondeo", "Mustang", "Kuga", "Ranger"],
+        "Toyota": ["Yaris", "Corolla", "Camry", "RAV4", "Land Cruiser", "Supra"],
+        "Opel": ["Corsa", "Astra", "Insignia", "Mokka", "Grandland"],
+        "Skoda": ["Fabia", "Octavia", "Superb", "Kodiaq", "Karoq"],
+        "Tesla": ["Model S", "Model 3", "Model X", "Model Y", "Cybertruck"]
+    };
+
+    const brandSelect = document.getElementById("brand");
+    const modelSelect = document.getElementById("model");
+
+    // Event Listener für Marken-Auswahl
+    brandSelect.addEventListener("change", function () {
+        const selectedBrand = this.value;
+
+        // Modell-Auswahl zurücksetzen
+        modelSelect.innerHTML = `<option value="">-- Bitte Modell wählen --</option>`;
+
+        if (selectedBrand) {
+            models[selectedBrand].forEach(model => {
+                const option = document.createElement("option");
+                option.value = model;
+                option.textContent = model;
+                modelSelect.appendChild(option);
+            });
+            modelSelect.disabled = false;
+        } else {
+            modelSelect.disabled = true;
+        }
+    });
+</script>
+
+</body>
+</html>
