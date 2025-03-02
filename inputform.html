@@ -19,7 +19,7 @@
       }
 
       .container {
-        max-width: 420px;
+        max-width: 950px;
         width: 100%;
         padding: 25px;
         background: #a6e2a9;
@@ -143,6 +143,9 @@
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         }
 
+
+
+
         /* Dynamische Hintergrundfarbe basierend auf der Auswahl */
         .color-select option {
         padding: 10px;
@@ -210,19 +213,56 @@
         outline: 2px solid #023015;
         outline-offset: 2px;
         }
+        input[type="checkbox"] {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #007bff;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+      }
 
+      input[type="checkbox"]:checked::before {
+        content: "✔";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #061a01;
+        font-size: 14px;
+}
         /* Responsive Design */
         @media (max-width: 600px) {
         .checkbox-container {
             grid-template-columns: 1fr;
         }
         }
+
+             /* Two-column layout */
+             .columns {
+        display: flex;
+        gap: 150px; /* Space between columns */
+      }
+
+      .column {
+        flex: 1; /* Each column takes equal width */
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Space between form elements */
+        min-width: 350px; /* Ensure columns don't get too narrow */
+
+      }
+      
     </style>
   </head>
   <body>
-    <div class="container">
+  <div class="container">
       <h2>Auto-Modell Auswahl</h2>
 
+      <!-- Left Column: Car Options -->
+  <div class="columns">
+    <div class="column">
       <label for="brand">Wähle eine Marke:</label>
       <select id="brand">
         <option value="">-- Bitte wählen --</option>
@@ -294,7 +334,7 @@
 
       <label for="registration">Erstzulassung (Monat & Jahr):</label>
       <input type="month" id="firstRegistration" placeholder="z. B. 12-2022" />
-      <label for="color">Farbe:</label>
+      <label for="color">Auto Farbe:</label>
       <select id="color" class="color-select">
         <option value="">-- Bitte wählen --</option>
         <option value="White" data-color="white">Weiß</option>
@@ -313,7 +353,9 @@
         <option value="Gold" data-color="gold">Gold</option>
         <option value="Turquoise" data-color="turquoise">Türkis</option>
       </select>
-      
+    </div>
+           <!-- Right Column: Checkbox List -->
+    <div class="column">
       <h3>Ausstattungen</h3>
       <fieldset>
         <legend>Wählen Sie die gewünschten Ausstattungen:</legend>
@@ -336,6 +378,8 @@
 
       <button onclick="saveCarData()">🚀 Speichern</button>
     </div>
+  </div>
+  </div>
 
     <script>
       function getSelectedFeatures() {
