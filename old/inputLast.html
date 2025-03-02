@@ -77,7 +77,7 @@
       input:focus {
         border-color: #28a745;
         box-shadow: 0 0 8px rgba(25, 82, 38, 0.3);
-        border: 2px solid;
+        border: 4px solid;
         outline: none;
         transform: scale(1.04);
       }
@@ -126,97 +126,7 @@
         box-shadow: 0 0 8px rgba(40, 167, 69, 0.3);
       }
 
-      .color-select {
-        padding: 8px;
-        font-size: 16px;
-        border: 2px solid #ccc;
-        border-radius: 5px;
-        background-color: white;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-        appearance: none; /* Entfernt Standard-Styling in Safari */
-        }
 
-        .color-select:hover, 
-        .color-select:focus {
-        border-color: #888;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Dynamische Hintergrundfarbe basierend auf der Auswahl */
-        .color-select option {
-        padding: 10px;
-        font-weight: bold;
-        }
-
-        .color-select option[value="White"] { background-color: white; color: black; }
-        .color-select option[value="Black"] { background-color: black; color: white; }
-        .color-select option[value="Grey"] { background-color: grey; color: white; }
-        .color-select option[value="Silver"] { background-color: silver; color: black; }
-        .color-select option[value="Blue"] { background-color: blue; color: white; }
-        .color-select option[value="Red"] { background-color: red; color: white; }
-        .color-select option[value="Green"] { background-color: green; color: white; }
-        .color-select option[value="Yellow"] { background-color: yellow; color: black; }
-        .color-select option[value="Orange"] { background-color: orange; color: black; }
-        .color-select option[value="Brown"] { background-color: brown; color: white; }
-        .color-select option[value="Beige"] { background-color: beige; color: black; }
-        .color-select option[value="Purple"] { background-color: purple; color: white; }
-        .color-select option[value="Pink"] { background-color: pink; color: black; }
-        .color-select option[value="Gold"] { background-color: gold; color: black; }
-        .color-select option[value="Turquoise"] { background-color: turquoise; color: black; }
-
-        /*checkbox */
-
-        /* Basic Reset */
-        fieldset {
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        padding: 20px;
-        margin: 0;
-        }
-
-        legend {
-        font-weight: bold;
-        font-size: 1.1em;
-        padding: 0 10px;
-        }
-
-        .checkbox-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 10px;
-        }
-
-        label {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 1em;
-        cursor: pointer;
-        }
-
-        input[type="checkbox"] {
-        width: 18px;
-        height: 18px;
-        cursor: pointer;
-        }
-
-        /* Hover and Focus States */
-        label:hover {
-        color: #50dd68;
-        }
-
-        input[type="checkbox"]:focus {
-        outline: 2px solid #023015;
-        outline-offset: 2px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 600px) {
-        .checkbox-container {
-            grid-template-columns: 1fr;
-        }
-        }
     </style>
   </head>
   <body>
@@ -262,6 +172,14 @@
       <label for="power">Leistung (PS):</label>
       <input type="number" id="power" placeholder="z. B. 115 PS" />
 
+      <label for="drive">Antriebsart:</label>
+      <select id="driveType">
+        <option value="Internal combustion engine">Verbrennungsmotor</option>
+        <option value="Hybrid">Hybrid</option>
+        <option value="Electric">Elektro</option>
+        <option value="Hydrogen">Wasserstoff</option>
+      </select>
+
       <label for="fuel">Kraftstoff:</label>
       <select id="fuel">
         <option value="Petrol">Benzin</option>
@@ -294,46 +212,44 @@
 
       <label for="registration">Erstzulassung (Monat & Jahr):</label>
       <input type="month" id="firstRegistration" placeholder="z. B. 12-2022" />
+
       <label for="color">Farbe:</label>
-      <select id="color" class="color-select">
+      <select id="color">
         <option value="">-- Bitte wählen --</option>
-        <option value="White" data-color="white">Weiß</option>
-        <option value="Black" data-color="black">Schwarz</option>
-        <option value="Grey" data-color="grey">Grau</option>
-        <option value="Silver" data-color="silver">Silber</option>
-        <option value="Blue" data-color="blue">Blau</option>
-        <option value="Red" data-color="red">Rot</option>
-        <option value="Green" data-color="green">Grün</option>
-        <option value="Yellow" data-color="yellow">Gelb</option>
-        <option value="Orange" data-color="orange">Orange</option>
-        <option value="Brown" data-color="brown">Braun</option>
-        <option value="Beige" data-color="beige">Beige</option>
-        <option value="Purple" data-color="purple">Lila</option>
-        <option value="Pink" data-color="pink">Rosa</option>
-        <option value="Gold" data-color="gold">Gold</option>
-        <option value="Turquoise" data-color="turquoise">Türkis</option>
+        <option value="White" style="background-color: white; color: black"> Weiß</option>
+        <option value="Black" style="background-color: black; color: white">Schwarz</option>
+        <option value="Grey" style="background-color: grey; color: white">Grau</option>
+        <option value="Silver" style="background-color: silver; color: black"> Silber</option>
+        <option value="Blue" style="background-color: blue; color: white">Blau</option>
+        <option value="Red" style="background-color: red; color: white">Rot</option>
+        <option value="Green" style="background-color: green; color: white">Grün</option>
+        <option value="Yellow" style="background-color: yellow; color: black">Gelb</option>
+        <option value="Orange" style="background-color: orange; color: black">Orange</option>
+        <option value="Brown" style="background-color: brown; color: white">Braun</option>
+        <option value="Beige" style="background-color: beige; color: black">Beige</option>
+        <option value="Purple" style="background-color: purple; color: white">Lila</option>
+        <option value="Pink" style="background-color: pink; color: black"> Rosa</option>
+        <option value="Gold" style="background-color: gold; color: black">Gold</option>
+        <option value="Turquoise"style="background-color: turquoise; color: black">Türkis</option>
       </select>
-      
+
       <h3>Ausstattungen</h3>
       <fieldset>
-        <legend>Wählen Sie die gewünschten Ausstattungen:</legend>
-        <div class="checkbox-container">
-          <label><input type="checkbox" name="features" value="ABS"> ABS</label>
-          <label><input type="checkbox" name="features" value="Alufelgen"> Alufelgen</label>
-          <label><input type="checkbox" name="features" value="Bluetooth"> Bluetooth</label>
-          <label><input type="checkbox" name="features" value="CD-Player"> CD-Player</label>
-          <label><input type="checkbox" name="features" value="Zentralverriegelung"> Zentralverriegelung</label>
-          <label><input type="checkbox" name="features" value="Tagfahrlicht"> Tagfahrlicht</label>
-          <label><input type="checkbox" name="features" value="Elektrische Fensterheber"> Elektrische Fensterheber</label>
-          <label><input type="checkbox" name="features" value="ESP"> ESP</label>
-          <label><input type="checkbox" name="features" value="Isofix"> Isofix</label>
-          <label><input type="checkbox" name="features" value="Navigationssystem"> Navigationssystem</label>
-          <label><input type="checkbox" name="features" value="Regensensor"> Regensensor</label>
-          <label><input type="checkbox" name="features" value="USB-Anschluss"> USB-Anschluss</label>
-          <label><input type="checkbox" name="features" value="Winterreifen"> Winterreifen</label>
-        </div>
+        <label>Features:</label>
+        <label><input type="checkbox" name="features" value="ABS" /> ABS</label>
+        <label><input type="checkbox" name="features" value="Alloy wheels" />Alufelgen</label>
+        <label><input type="checkbox" name="features" value="Bluetooth" />Bluetooth</label>
+        <label><input type="checkbox" name="features" value="CD player" />CD-Player</label>
+        <label><input type="checkbox" name="features" value="Central locking" />Zentralverriegelung</label>
+        <label><input type="checkbox" name="features" value="Daytime running lights"/>Tagfahrlicht</label>
+        <label><input type="checkbox" name="features" value="Electric windows" />Elektrische Fensterheber</label>
+        <label><input type="checkbox" name="features" value="ESP" /> ESP</label>
+        <label><input type="checkbox" name="features" value="Isofix" /> Isofix</label>
+        <label><input type="checkbox" name="features" value="Navigation system" />Navigationssystem</label>
+        <label><input type="checkbox" name="features" value="Rain sensor" />Regensensor</label>
+        <label><input type="checkbox" name="features" value="USB port" />USB-Anschluss</label>
+        <label><input type="checkbox" name="features" value="Winter tyres" /> Winterreifen</label>
       </fieldset>
-
       <button onclick="saveCarData()">🚀 Speichern</button>
     </div>
 
@@ -370,19 +286,28 @@
       });
 
       // Color Selection Handling
-      document.getElementById("color").addEventListener("change", function () {
-        const selectedOption = this.options[this.selectedIndex];
-        this.style.backgroundColor = selectedOption.dataset.color;
-        this.style.color = selectedOption.value === "Black" ? "white" : "black";
-        });
+      const colorSelect = document.getElementById("color");
+      const colorPreview = document.createElement("div");
+      colorPreview.classList.add("color-preview");
+      colorPreview.textContent = "Farbe auswählen";
+      colorSelect.parentNode.insertBefore(colorPreview, colorSelect);
+      colorSelect.style.display = "none";
+
+      colorPreview.addEventListener("click", function () {
+        colorSelect.style.display = "block";
+        colorSelect.focus();
+      });
+
+      colorSelect.addEventListener("change", function () {
+        const selectedOption = colorSelect.options[colorSelect.selectedIndex];
+        colorPreview.style.backgroundColor = selectedOption.value;
+        colorPreview.textContent = selectedOption.textContent;
+        colorSelect.style.display = "none";
+      });
 
       function saveCarData() {
         const carsData = {
-          carId: "car-" + Date.now(),
-          userId: "UserId to be created",
-          imageURL:"imageURL to be added ",
-          attributes:
-          {
+          id: "car-" + Date.now(),
           creationDate: new Date().toISOString(),
           modificationDate: new Date().toISOString(),
           brand: document.getElementById("brand").value,
@@ -390,6 +315,7 @@
           category: document.getElementById("category").value,
           mileage: document.getElementById("mileage").value,
           power: document.getElementById("power").value,
+          driveType: document.getElementById("driveType").value,
           fuel: document.getElementById("fuel").value,
           seats: document.getElementById("seats").value,
           doors: document.getElementById("doors").value,
@@ -398,15 +324,18 @@
           firstRegistration: document.getElementById("firstRegistration").value,
           color: document.getElementById("color").value,
           features: getSelectedFeatures(),
-          }
         };
 
-          const blob = new Blob([JSON.stringify(carsData, null, 2)], {
+        document.querySelectorAll("select, input").forEach((input) => {
+          carsData[input.id] = input.value;
+        });
+
+        const blob = new Blob([JSON.stringify(carsData, null, 2)], {
           type: "application/json",
         });
         const a = document.createElement("a");
         a.href = URL.createObjectURL(blob);
-        a.download = `${carsData.carId}.json`;
+        a.download = `${carsData.id}.json`;
         a.click();
       }
     </script>
