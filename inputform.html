@@ -376,12 +376,37 @@
         </div>
       </fieldset>
 
+      <label for="carPhotos">Fotos hochladen:</label>
+      <input type="file" id="carPhotos" name="carPhotos" accept="image/*" multiple />
+      <div id="imagePreview" style="margin-top: 10px;"></div>
+
       <button onclick="saveCarData()">🚀 Speichern</button>
     </div>
   </div>
   </div>
 
     <script>
+      /*save images*/
+      document.getElementById("carPhotos").addEventListener("change", function () {
+      const preview = document.getElementById("imagePreview");
+      preview.innerHTML = ""; // Clear previous previews
+
+      Array.from(this.files).forEach((file) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const img = document.createElement("img");
+          img.src = e.target.result;
+          img.style.maxWidth = "100px";
+          img.style.margin = "5px";
+          preview.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+      });
+    });
+
+    
+
+
       function getSelectedFeatures() {
         const checkboxes = document.querySelectorAll("input[name='features']:checked");
         return Array.from(checkboxes).map((checkbox) => checkbox.value);
@@ -419,12 +444,29 @@
         this.style.backgroundColor = selectedOption.dataset.color;
         this.style.color = selectedOption.value === "Black" ? "white" : "black";
         });
+    // Save Car Data with Photos
+    async function saveCarData() {
+        const fileInput = document.getElementById("carPhotos");
+        const files = fileInput.files;
 
-      function saveCarData() {
+        const readFileAsBase64 = (file) => {
+          return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = () => reject(reader.error);
+            reader.readAsDataURL(file);
+          });
+        };
+
+     
+        try {
+          const photos = await Promise.all(Array.from(files).map(readFileAsBase64));
+
         const carsData = {
           carId: "car-" + Date.now(),
           userId: "UserId to be created",
           imageURL:"imageURL to be added ",
+          photos: photos,
           attributes:
           {
           creationDate: new Date().toISOString(),
@@ -443,6 +485,7 @@
           color: document.getElementById("color").value,
           features: getSelectedFeatures(),
           }
+          
         };
 
           const blob = new Blob([JSON.stringify(carsData, null, 2)], {
@@ -452,7 +495,11 @@
         a.href = URL.createObjectURL(blob);
         a.download = `${carsData.carId}.json`;
         a.click();
-      }
+        } catch (error) {
+            console.error("Error reading files:", error);
+            alert("Fehler beim Hochladen der Fotos. Bitte versuchen Sie es erneut.");
+          }
+        }
     </script>
   </body>
 </html>
