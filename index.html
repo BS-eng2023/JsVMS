@@ -6,8 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>🚗 Vehicle Management System</title>
         <link rel="stylesheet" href="./styles.css">  <!-- Corrected -->
+        <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+        <script src="./assets/js/index.js" type="module" defer></script>
 
-        <script  src="./script.js"></script>
     </head>
     <body>
         
@@ -21,63 +22,17 @@
             <h2>Linke Seite</h2>
             <p>Hier ist der linke Bereich.</p>
             <button id="applyFilters">Filter Cars</button>
-            <div>"    "</div> 
-            <button id="addNewCar">Add new car</button>
+            <div>    </div> 
+<!--             <button onclick="loadContent()" id="addNewCar">Add new car</button>
+ -->            <button id="addNewCar">Add new car</button>
+
                </div>
         <div class="main">
             <h2>Hauptinhalt</h2>
-            <div class="component">
-                <h3>Komponente 1</h3>
-                <div class="containerTxt">
-                    <img src="https://img.classistatic.de/api/v1/mo-prod/images/e4/e4f8d15a-bae1-4af7-84da-afd0f4c53839?rule=mo-1600.jpg" alt="Auto"> 
-                    <p>Dies ist die zweite Komponente im Hauptinhalt.</p>
-               </div>
-            </div>
-            
-            <div class="component">
-                     <h3>Komponente 2</h3>
-                     <div class="containerTxt">
-                     <img src="https://img.classistatic.de/api/v1/mo-prod/images/e4/e4f8d15a-bae1-4af7-84da-afd0f4c53839?rule=mo-1600.jpg" alt="Auto"> 
-                    <p>
-                        <div>Dies ist die zweite Komponente im Hauptinhalt.</div> 
-                    </p>
-                </div>
-            </div>
-            <div class="component">
-                <h3>Komponente 3</h3>
-                <div class="containerTxt">
-                    <img src="https://img.classistatic.de/api/v1/mo-prod/images/e4/e4f8d15a-bae1-4af7-84da-afd0f4c53839?rule=mo-1600.jpg" alt="Auto"> 
-                    <p>Dies ist die zweite Komponente im Hauptinhalt.</p>
-               </div>
-            </div>
-            <div class="component">
-                <h3>Komponente 4</h3>
-                <p>Dies ist die vierte Komponente im Hauptinhalt.</p>
-            </div>
-            <div class="component">
-                <h3>Komponente 5</h3>
-                <p>Dies ist die fünfte Komponente im Hauptinhalt.</p>
-            </div>
-            <div class="component">
-                <h3>Komponente 6</h3>
-                <p>Dies ist die sechste Komponente im Hauptinhalt.</p>
-            </div>
-            <div class="component">
-                <h3>Komponente 7</h3>
-                <p>Dies ist die siebte Komponente im Hauptinhalt.</p>
-            </div>
-            <div class="component">
-                <h3>Komponente 8</h3>
-                <p>Dies ist die achte Komponente im Hauptinhalt.</p>
-            </div>
-            <div class="component">
-                <h3>Komponente 9</h3>
-                <p>Dies ist die neunte Komponente im Hauptinhalt.</p>
-            </div>
-            <div class="component">
-                <h3>Komponente 10</h3>
-                <p>Dies ist die zehnte Komponente im Hauptinhalt.</p>
-            </div>
+            <div class="component"> </div>
+            <nav>
+                <div class="addCar">Add dnew Car</div>
+            </nav>
         </div>
         
         <div class="right">
@@ -89,7 +44,8 @@
             <select id="fuel-filter">
                 <option value="">All Fuel Types</option>
             </select>
-            <button onclick="applyFilters()">Filter</button>
+            <button style="font-size:18px" onclick="applyFilters()"><i class="fas fa-sync"></i>Filter</button>
+
         </div>
         <div class="footer">
             <h6>Footer</h6>

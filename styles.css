@@ -1,4 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
+
+  h2 {
+    text-align: center;
+    color: #01160e;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  
 :root {
   
   
@@ -136,6 +162,7 @@ img {
 .car-info {
     flex-grow: 1; /* Takes up remaining space */
 }
+/*
 button {
     width: 150px;
     background-color: var(--button);
@@ -149,3 +176,59 @@ button {
 button:hover {
     background-color: var(--hover);
 }
+    */
+
+/* add car */
+
+label {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 5px;
+  }
+
+  select,
+  input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #bec4bf;
+    border-radius: 6px;
+    transition: border 0.3s, box-shadow 0.3s;
+    font-size: 16px;
+    background-color: #fdfdfd;
+    box-sizing: border-box;
+  }
+
+  select:focus,
+  input:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 8px rgba(25, 82, 38, 0.3);
+    border: 2px solid;
+    outline: none;
+    transform: scale(1.04);
+  }
+
+  button {
+    margin-top: 20px;
+    background: linear-gradient(90deg, #28a745, #218838);
+    color: white;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 3px 10px rgba(40, 167, 69, 0.3);
+    display: block;
+  }
+
+  button:hover {
+    background: linear-gradient(90deg, #218838, #1e7e34);
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+  }
+
+  button:active {
+    transform: scale(0.98);
+  }

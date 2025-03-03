@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="stylesheet" href="./addCar.css">  <!-- Corrected -->
+    <script  src="./addCar.js">defer </script>
+
+    <title>Fahrzeugauswahl</title>
+      
+  </head>
+  <body>
+  <div class="container">
+      <h2>Auto-Modell Auswahl</h2>
+
+      <!-- Left Column: Car Options -->
+  <div class="columns">
+    <div class="column">
+      <label for="brand">Wähle eine Marke:</label>
+      <select id="brand">
+        <option value="">-- Bitte wählen --</option>
+        <option value="BMW">BMW</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="Audi">Audi</option>
+        <option value="Volkswagen">Volkswagen</option>
+        <option value="Ford">Ford</option>
+        <option value="Toyota">Toyota</option>
+        <option value="Opel">Opel</option>
+        <option value="Skoda">Skoda</option>
+        <option value="Tesla">Tesla</option>
+      </select>
+
+      <label for="model">Wähle ein Modell:</label>
+      <select id="model" disabled>
+        <option value="">-- Bitte erst Marke wählen --</option>
+      </select>
+
+      <label for="category">Fahrzeugtyp:</label>
+      <select id="category">
+        <option value="">-- Bitte wählen --</option>
+        <option value="SUV">SUV</option>
+        <option value="Sedan">Sedan</option>
+        <option value="Coupe">Coupé</option>
+        <option value="Cabriolet">Cabriolet</option>
+        <option value="Kombi">Kombi</option>
+        <option value="Pickup">Pickup</option>
+        <option value="Van">Van</option>
+        <option value="Sportwagen">Sportwagen</option>
+        <option value="Elektro">Elektro</option>
+      </select>
+
+      <label for="mileage">Kilometerstand:</label>
+      <input type="number" id="mileage" placeholder="z. B. 104000 km" />
+
+      <label for="power">Leistung (PS):</label>
+      <input type="number" id="power" placeholder="z. B. 115 PS" />
+
+      <label for="fuel">Kraftstoff:</label>
+      <select id="fuel" >
+        <option value="Petrol">Benzin</option>
+        <option value="Diesel">Diesel</option>
+        <option value="Electric">Elektro</option>
+        <option value="Hybrid">Hybrid</option>
+      </select>
+
+      <label for="seats">Anzahl der Sitze:</label>
+      <input type="number" id="seats" placeholder="z. B. 5" />
+
+      <label for="doors">Anzahl der Türen:</label>
+      <select id="doors">
+        <option value="2/3">2/3 Türen</option>
+        <option value="4/5">4/5 Türen</option>
+      </select>
+
+      <label for="transmission">Getriebe:</label>
+      <select id="transmission">
+        <option value="Manual">Manuell</option>
+        <option value="Automatic">Automatik</option>
+      </select>
+
+      <label for="emission">Emissionsklasse:</label>
+      <select id="emission">
+        <option value="Euro4">Euro4</option>
+        <option value="Euro5">Euro5</option>
+        <option value="Euro6">Euro6</option>
+      </select>
+
+      <label for="registration">Erstzulassung (Monat & Jahr):</label>
+      <input type="month" id="firstRegistration" placeholder="z. B. 12-2022" />
+      <label for="color">Auto Farbe:</label>
+      <select id="color" class="color-select">
+        <option value="">-- Bitte wählen --</option>
+        <option value="White" data-color="white">Weiß</option>
+        <option value="Black" data-color="black">Schwarz</option>
+        <option value="Grey" data-color="grey">Grau</option>
+        <option value="Silver" data-color="silver">Silber</option>
+        <option value="Blue" data-color="blue">Blau</option>
+        <option value="Red" data-color="red">Rot</option>
+        <option value="Green" data-color="green">Grün</option>
+        <option value="Yellow" data-color="yellow">Gelb</option>
+        <option value="Orange" data-color="orange">Orange</option>
+        <option value="Brown" data-color="brown">Braun</option>
+        <option value="Beige" data-color="beige">Beige</option>
+        <option value="Purple" data-color="purple">Lila</option>
+        <option value="Pink" data-color="pink">Rosa</option>
+        <option value="Gold" data-color="gold">Gold</option>
+        <option value="Turquoise" data-color="turquoise">Türkis</option>
+      </select>
+    </div>
+           <!-- Right Column: Checkbox List -->
+    <div class="column">
+      <h3>Ausstattungen</h3>
+      <fieldset>
+        <legend>Wählen Sie die gewünschten Ausstattungen:</legend>
+        <div class="checkbox-container">
+          <label><input type="checkbox" name="features" value="ABS"> ABS</label>
+          <label><input type="checkbox" name="features" value="Alufelgen"> Alufelgen</label>
+          <label><input type="checkbox" name="features" value="Bluetooth"> Bluetooth</label>
+          <label><input type="checkbox" name="features" value="CD-Player"> CD-Player</label>
+          <label><input type="checkbox" name="features" value="Zentralverriegelung"> Zentralverriegelung</label>
+          <label><input type="checkbox" name="features" value="Tagfahrlicht"> Tagfahrlicht</label>
+          <label><input type="checkbox" name="features" value="Elektrische Fensterheber"> Elektrische Fensterheber</label>
+          <label><input type="checkbox" name="features" value="ESP"> ESP</label>
+          <label><input type="checkbox" name="features" value="Isofix"> Isofix</label>
+          <label><input type="checkbox" name="features" value="Navigationssystem"> Navigationssystem</label>
+          <label><input type="checkbox" name="features" value="Regensensor"> Regensensor</label>
+          <label><input type="checkbox" name="features" value="USB-Anschluss"> USB-Anschluss</label>
+          <label><input type="checkbox" name="features" value="Winterreifen"> Winterreifen</label>
+        </div>
+      </fieldset>
+
+      <label for="carPhotos">Fotos hochladen:</label>
+      <input type="file" id="carPhotos" name="carPhotos" accept="image/*" multiple />
+      <div id="imagePreview" style="margin-top: 10px;"></div>
+
+      <button style="font-size:18px" onclick="saveCarData()"><i class="fas fa-save"></i> Speichern
+      </button>
+    </div>
+  </div>
+  </div>
+
+  </body>
+</html>
