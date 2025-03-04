@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title></title>
+        <style></style>
+        
+ 
+    </head>
+    <body>
+        <form id="car-form">
+            <label for="car-name">Car Name:</label>
+            <input type="text" id="car-name" name="carName">
+        
+            <label for="power">Leistung (PS):</label>
+            <input type="number" id="power" name="power">
+        
+            <label for="fuel">Kraftstoff:</label>
+            <select id="fuel" name="fuel">
+                <option value="Petrol">Benzin</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Electric">Elektro</option>
+                <option value="Hybrid">Hybrid</option>
+            </select>
+        
+            <label>Extras:</label>
+            <input type="checkbox" name="features" value="ABS"> ABS
+            <input type="checkbox" name="features" value="Bluetooth"> Bluetooth
+            <input type="checkbox" name="features" value="Navigation"> Navigation
+        
+            <button type="button" id="submit-btn">Submit</button>
+        </form>
+        <script>
+            'use strict';
+            function getFormData(formId) {
+    const form = document.getElementById(formId);
+    const formData = new FormData(form);
+    const data = {};
+
+    formData.forEach((value, key) => {
+        if (data[key]) {
+            // Handle multiple selections like checkboxes
+            if (!Array.isArray(data[key])) {
+                data[key] = [data[key]];
+            }
+            data[key].push(value);
+        } else {
+            data[key] = value;
+        }
+    });
+
+    return data;
+}
+
+// Example Usage
+document.getElementById("submit-btn").addEventListener("click", function () {
+    const formData = getFormData("car-form");
+    console.log(formData);
+});
+
+            
+        </script>
+    </body>
+</html>

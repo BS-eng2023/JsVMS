@@ -2,7 +2,14 @@
 
 const selectbox = (parent, legend, options, onSelect) => {
     const container = document.createElement('div');
-    container.className = 'container';
+    
+    //container.className = 'container'; //should use another container
+    container.className = 'selectionContainer'; 
+    // container.className = 'column';
+    //container.classList('.column');
+    //parent.classList('.columns');
+
+
     parent.append(container);
 
     const elLegend = document.createElement('span');
@@ -15,7 +22,7 @@ const selectbox = (parent, legend, options, onSelect) => {
     const elOption = document.createElement('option')
     elOption.innerHTML = 'Select Option';
     elSelect.append(elOption);
-
+    elSelect.name=legend;
 
     container.update = options => {
         elSelect.innerHTML = '';
