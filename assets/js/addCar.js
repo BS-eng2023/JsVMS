@@ -143,7 +143,6 @@ const brands = [
   },
 ];
 
-const car = {};
 
 const addCar = () => {
   elements.main.innerHTML = "";
@@ -270,17 +269,17 @@ elements.main.appendChild(saveCarsDataButton);
    function getFormData() {
     const form = document.querySelector('.carForm');
     const formData = new FormData(form);
-    const data = {};
+    const carData = {};
 
     formData.forEach((value, key) => {
-        if (data[key]) {
+        if (carData[key]) {
             // Handle multiple selections like checkboxes
-            if (!Array.isArray(data[key])) {
-                data[key] = [data[key]];
+            if (!Array.isArray(carData[key])) {
+                carData[key] = [carData[key]];
             }
-            data[key].push(value);
+            carData[key].push(value);
         } else {
-            data[key] = value;
+            carData[key] = value;
         }
     });
     //return data;
@@ -288,7 +287,7 @@ elements.main.appendChild(saveCarsDataButton);
     const carsData = {
         carId: "car-" + Date.now(),
         userId: "UserId to be created",
-        attributes:data,
+        attributes:carData,
         imageURL:"imageURL to be added ",
              };
 
