@@ -3,15 +3,27 @@
             //// add car script
             import elements from './elements.js';
             import addCar from './addCar.js';
+            import addUser from './addUser.js';
+            import logIn from './logIn.js';
+
+            //disable add new car button //
+            const addNewCarButton = document.getElementById("addNewCar");
+            addNewCarButton.title = "Bitte zuerst anmelden!";
+            addNewCarButton.disabled = true;
 
             const domMapping = () => {
                  elements.main = document.querySelector('.main');
                  elements.main.innerHTML="";
+                 elements.logIn = document.querySelector('#logIn');
                  elements.addNewCar = document.querySelector('#addNewCar');
+                 elements.addNewUser = document.querySelector('#addNewUser');
+
            }
 
             const appendEventListeners = () => {
+                elements.logIn.addEventListener('click', logIn);
                 elements.addNewCar.addEventListener('click', addCar);
+                elements.addNewUser.addEventListener('click', addUser);
             }
             ////
 
