@@ -5,7 +5,6 @@ import golbalData from "./components/golbalData.js";
 
 const login = () => {
   elements.main.innerHTML = "";
-  console.log(elements);
   const elSelction = document.createElement("h2");
   elSelction.innerHTML = "Anmelden";
   elements.main.append(elSelction);
@@ -50,8 +49,7 @@ const login = () => {
 
   let isLoggedIn = false;
   const Element = document.createElement("div");
-  Element.className = "car-listing";
-  elements.main.appendChild(Element);
+  Element.className=".component";
 
   loginButton.addEventListener("click", function () {
     // Hier sollte eine echte Login-Überprüfung erfolgen
@@ -65,7 +63,9 @@ const login = () => {
         users = attribute;
         const user = users.find(user => user.attributes.userName === currentName.value);
         if (user && user.attributes.userPassword === currentPassword.value) {
-          Element.innerText ="Login successful! Welcome, " + users["userName"] + "!";
+          Element.innerText ="Login successful! Welcome, " + currentName.value + "!";
+          Element.classList.add(".login-message",".login-message.success");
+
           loginSuccess = true;
           elements.main.appendChild(Element);
           loginSuccess = true;

@@ -369,3 +369,44 @@ input[type="checkbox"]:checked::before {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
+/* Base class for login messages */
+.login-message {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid transparent;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+/* Success message style */
+.login-message.success {
+  background-color: #d4edda; /* Light green */
+  border-color: #c3e6cb;
+  color: #155724; /* Dark green */
+}
+
+/* Error message style */
+.login-message.error {
+  background-color: #f8d7da; /* Light red */
+  border-color: #f5c6cb;
+  color: #721c24; /* Dark red */
+}
+
+/* Warning message style */
+.login-message.warning {
+  background-color: #fff3cd; /* Light yellow */
+  border-color: #ffeeba;
+  color: #856404; /* Dark yellow */
+}
+
+/* Info message style */
+.login-message.info {
+  background-color: #d1ecf1; /* Light blue */
+  border-color: #bee5eb;
+  color: #0c5460; /* Dark blue */
+}

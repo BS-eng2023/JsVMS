@@ -14,6 +14,9 @@ function displayCars(cars) {
         let attributesHTML = "";
         for (const [key, value] of Object.entries(car.attributes)) {
             if (Array.isArray(value)) continue; // Skip features for now
+            if (key=="title" ) continue;
+            if (key=="carPhotos" ) continue;
+
             attributesHTML += `<p><strong>${key}:</strong> ${value}</p>`;
         }
 
