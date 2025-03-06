@@ -1,0 +1,112 @@
+[
+  {
+      "_id": "user-1741263595842163",
+      "attributes": {
+          "userName": "Azaam",
+          "userPassword": "12345!",
+          "userMail": "Azaam@mail.de",
+          "userAddress": "Berlin, 2033, Irgendwo straß322",
+          "userPhoneNumber": "01763243242342",
+          "User Type :": "Private"
+      }
+  },
+  {
+      "_id": "user-1741263595842164",
+      "attributes": {
+          "userName": "Lena",
+          "userPassword": "lena1234!§!",
+          "userMail": "lena@mail.de",
+          "userAddress": "Hamburg, 22045, Musterstraße 12",
+          "userPhoneNumber": "017612345678",
+          "User Type :": "Private"
+      }
+  },
+  {
+      "_id": "user-1741263595842165",
+      "attributes": {
+          "userName": "Max",
+          "userPassword": "max5678!§!",
+          "userMail": "max@mail.de",
+          "userAddress": "Munich, 80331, Beispielweg 34",
+          "userPhoneNumber": "017698765432",
+          "User Type :": "Business"
+      }
+  },
+  {
+      "_id": "user-1741263595842166",
+      "attributes": {
+          "userName": "Sophie",
+          "userPassword": "sophie91011!§!",
+          "userMail": "sophie@mail.de",
+          "userAddress": "Cologne, 50667, Testallee 56",
+          "userPhoneNumber": "017655443322",
+          "User Type :": "Private"
+      }
+  },
+  {
+      "_id": "user-1741263595842167",
+      "attributes": {
+          "userName": "Felix",
+          "userPassword": "felix1213!§!",
+          "userMail": "felix@mail.de",
+          "userAddress": "Frankfurt, 60311, Demoplatz 78",
+          "userPhoneNumber": "017611223344",
+          "User Type :": "Business"
+      }
+  },
+  {
+      "_id": "user-1741263595842168",
+      "attributes": {
+          "userName": "Julia",
+          "userPassword": "julia1415!§!",
+          "userMail": "julia@mail.de",
+          "userAddress": "Stuttgart, 70173, Beispielstraße 90",
+          "userPhoneNumber": "017677889900",
+          "User Type :": "Private"
+      }
+  },
+  {
+      "_id": "user-1741263595842169",
+      "attributes": {
+          "userName": "Tom",
+          "userPassword": "tom1617!§!",
+          "userMail": "tom@mail.de",
+          "userAddress": "Düsseldorf, 40210, Musterweg 123",
+          "userPhoneNumber": "017633445566",
+          "User Type :": "Business"
+      }
+  },
+  {
+      "_id": "user-1741263595842170",
+      "attributes": {
+          "userName": "Anna",
+          "userPassword": "anna1819!§!",
+          "userMail": "anna@mail.de",
+          "userAddress": "Leipzig, 04109, Teststraße 45",
+          "userPhoneNumber": "017644556677",
+          "User Type :": "Private"
+      }
+  },
+  {
+      "_id": "user-1741263595842171",
+      "attributes": {
+          "userName": "Paul",
+          "userPassword": "paul2021!§!",
+          "userMail": "paul@mail.de",
+          "userAddress": "Dresden, 01067, Beispielallee 67",
+          "userPhoneNumber": "017688990011",
+          "User Type :": "Business"
+      }
+  },
+  {
+      "_id": "user-1741263595842172",
+      "attributes": {
+          "userName": "Laura",
+          "userPassword": "laura2223!§!",
+          "userMail": "laura@mail.de",
+          "userAddress": "Bremen, 28195, Musterplatz 89",
+          "userPhoneNumber": "017699887766",
+          "User Type :": "Private"
+      }
+  }
+]

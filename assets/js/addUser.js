@@ -5,6 +5,7 @@ import createInputField from "./components/inputData.js";
 import createCheckboxes from "./components/checkboxes.js";
 import golbalData from "./components/golbalData.js";
 
+
 const addUser = () => {
     const createNumber = (min, max) => ~~(Math.random() * (max - min + 1) + min);
 
@@ -21,19 +22,8 @@ const addUser = () => {
     createInputField(formElement, "Benutzer Adresse:","userAddress","text","Adresse");
     createInputField(formElement, "Handynummer:","userPhoneNumber","number","0176543210000");
     const selKraftstoffe = compSelectbox( formElement,"User Type :",golbalData.userType, () => {}  );
-
+   
     
-    // save temperary data into local Storage
-    /* 
-    let content=null;
-    let loaded = localStorage.getItem('myCar');
-    if (loaded) content = JSON.parse(loaded);
-    const form = document.querySelector('.userForm');
-    const formData = new FormData(form);
-    formData=content;
-    */
-
-
     const saveUserDataButton = document.createElement("button");
     saveUserDataButton.className = 'adduser'; 
     saveUserDataButton.style.fontSize = "18px"; // Set font size
@@ -65,18 +55,45 @@ const addUser = () => {
             userData[key] = value;
         }
     });
-    //let myString = JSON.stringify(meinAuto);
-    //localStorage.setItem('myCar', userData);
-
-
+   
     //return data;
     /* user data object*/
     let userID= "user-" + Date.now()+createNumber(100,999);
     golbalData.currentUserId=userID;
     const user = {
-        userId:userID,
+        _id:userID,
         attributes:userData,
              };
+            // Save the document to PouchDB
+            const db = new PouchDB('my_database');
+
+            db.put(user).then(response => {
+                console.log("Vehicle saved:", response);
+            }).catch(error => {
+                console.error("Error saving vehicle:", error);
+            });
+
+          /*   filename="../json/cars";
+             writeFileSync(`${filename}.json`, JSON.stringify(user, null, 2)); */
+
+           /*   //function saveJSON() {
+                console.log("Current Page Directory:", window.location.href);
+
+             const xhr = new XMLHttpRequest();
+             //xhr.open("POST", "./cars.json", true);
+             //xhr.open("POST", "../json/cars.json", true);
+             xhr.open("POST", "http://127.0.0.1:5501/index.html", true);
+
+             xhr.setRequestHeader("Content-Type", "application/json");
+                      xhr.onreadystatechange = function () {
+                 if (xhr.readyState === 4 && xhr.status === 200) {
+                     console.log("JSON updated successfully:", xhr.responseText);
+                 }
+             };
+         
+             xhr.send(JSON.stringify(user)); */
+            //}
+    
 
         const blob = new Blob([JSON.stringify(user, null, 2)], {
         type: "application/json",
@@ -86,19 +103,6 @@ const addUser = () => {
       a.download = `${user.userId}.json`;
       a.click();
 
-      /*   const fs = require("fs");
-        
-     
-        const saveJsonToFile = () => {
-        const dir = `../users/${userID}`;
-    
-        // Ensure the directory exists
-        if (!fs.existsSync(dir)) {
-         fs.mkdirSync(dir, { recursive: true });
-        }
-        fs.writeFileSync(`${dir}/${userID}.json`, JSON.stringify(user, null, 2), "utf-8");
-            console.log("Datei erfolgreich gespeichert!");
-        } */
       } 
     
 
@@ -107,3 +111,4 @@ document.querySelector('.adduser').addEventListener("click", function () {
 });
 }
 export default addUser;
+

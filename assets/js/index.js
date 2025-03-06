@@ -5,6 +5,9 @@
             import addCar from './addCar.js';
             import addUser from './addUser.js';
             import logIn from './logIn.js';
+            //import populateFilters from "./components/populateFilters.js";
+            import displayCars from "./components/displayCars.js";
+            import applyFilters from "./components/applyFilters.js";
 
             //disable add new car button //
             const addNewCarButton = document.getElementById("addNewCar");
@@ -25,85 +28,64 @@
                 elements.addNewCar.addEventListener('click', addCar);
                 elements.addNewUser.addEventListener('click', addUser);
             }
-            ////
-
-            function displayCars(cars) {
-            const container = document.querySelector(".main");
-            container.innerHTML = "";
-            cars.forEach((car) => {
-                const carElement = document.createElement("div");
-                carElement.className = "car-listing";
-                carElement.innerHTML = `
-                    <h2>${car.title}</h2>
-                        <div class="car-container">
-                            <img src="${car.previewImage}"  class="car-image">
-                            <div class="car-info">
-                                <p><strong>Price:</strong> ${car.price.total.localized}</p>
-                                <p><strong>Brand:</strong> ${car.brand} | <strong>Model:</strong> ${car.model}</p>
-                                <p><strong>Category:</strong> ${car.category}</p>
-                                <p><strong>Mileage:</strong> ${car.attributes["Mileage"]}</p>
-                                <p><strong>Fuel:</strong> ${car.attributes["Fuel"]}</p>
-                                <p><a href="${car.url}" target="_blank">View Listing</a></p>
-                            </div>
-                        </div>
-                    `;
-                container.appendChild(carElement);
-            });
+            
+         
+            function populateFilters(carsData) {
+                const brandFilter = document.getElementById('brand-filter');
+                const fuelFilter = document.getElementById('fuel-filter');
+                
+                const brands = new Set();
+                const fuels = new Set();
+                
+                carsData.forEach(car => {
+                    brands.add(car.attributes ["Marken"]);
+                    fuels.add(car.attributes["Kraftstoffe :"]);
+                });
+                
+                brands.forEach(brand => {
+                    const option = document.createElement('option');
+                    option.value = brand;
+                    option.textContent = brand;
+                    brandFilter.appendChild(option);
+                });
+                
+                fuels.forEach(fuel => {
+                    const option = document.createElement('option');
+                    option.value = fuel;
+                    option.textContent = fuel;
+                    fuelFilter.appendChild(option);
+                });
             }
-            // FUNKTIONEN
-            const init = () => {
-            const xhr = new XMLHttpRequest();
-            xhr.open("get", "./carList02.json");
-            xhr.addEventListener("load", () => {
-                if (xhr.status == 200) {
-                let response = JSON.parse(xhr.response);
-                //render(response);
-                displayCars(response);
-                } else {
-                console.warn("Es gab ein Problem");
-                }
-            });
-            // Erst absenden, wenn das DOM fertig geladen ist
-            xhr.send();
-            const button = document.querySelector("#applyFilters");
 
-            // Füge ein Click-Event hinzu
-            button.addEventListener("click", function () {
+            const init = () => {
+            //add car script
+            domMapping();
+            appendEventListeners();
+            //
+
+             fetch('../assets/json/sample_cars.json')
+            .then(response => response.json())
+            .then(data => {
+                elements.data=data;
+                populateFilters(data);
+                displayCars(data);
+            })
+            .catch(error => console.error('Error loading the JSON file:', error));
+            
+            //to display Filter bar on the right side
+            const buttonDisplayFilter = document.querySelector("#displayfilter");
+            buttonDisplayFilter.addEventListener("click", function () {
                 let right = document.querySelector(".right");
                 right.classList.toggle("rightSearchClicked");
             });
+             //to apply Filter 
+             const buttonApllyFilter = document.querySelector(".applyFilters");
+             buttonApllyFilter.addEventListener("click", function () {
+                applyFilters(elements.data);
+             });
 
-            ////add car script
-            domMapping();
-            appendEventListeners();
-            ////
+           
             };
 
             // INIT
             document.addEventListener("DOMContentLoaded", init);
-
-            /*
-                        fetch('./carList02.json')
-                        .then(response => response.json())
-                        .then(data => {
-                            carsData = data;
-                            //populateFilters();
-                            displayCars(data);
-                        })
-                        .catch(error => console.error('Error loading the JSON file:', error));
-
-
-                        function loadContent() {
-            fetch('inputform.html') // Load another HTML file
-            .then(response => response.text())
-            .then(data => {
-            const container=document.querySelector(".main");
-            container.innerHTML="";
-            const carElement=document.createElement("div");
-            carElement.innerHTML=data;
-            container.appendChild(carElement);
-            })
-            .catch(error => console.error('Error loading content:', error));
-
-            }
-            */

@@ -5,7 +5,7 @@
   --background: #f2f2f0;
   --color: #0d0503;
   --border: #d67728;
-  --card: #a3695b;
+  --card: #d3e6cb;
   --button: #731f0d;
   --hover: #382503;
 }
@@ -100,7 +100,6 @@
   grid-area: main;
   padding: 10px;
   overflow-y: auto;
-  height: 70vh;
 
 }
 
@@ -135,7 +134,7 @@
   border: 3px solid var(--border);
   border-radius: 5px;
   color: var(--color);
-  box-shadow: 10px 5px 5px #731f0d;
+  box-shadow: 10px 5px 5px #022b0e;
 }
 .containerTxt {
   display: flex;
@@ -143,11 +142,12 @@
   gap: 10px; /* Space between image and text */
 }
 .car-listing {
-  border: 3px solid #a78412;
+  border: 3px solid #020f00;
   padding: 15px;
   margin-bottom: 15px;
-  background-color: #f0f5b0;
+  background-color: #466643;
   border-radius: 5px;
+  font-size:x-large;
 }
 .car-container {
   display: flex;
@@ -156,7 +156,7 @@
   border: 2px solid #ddd; /* Optional border */
   padding: 10px;
   border-radius: 8px;
-  background: #fff;
+  background: var(--card);;
 }
 .car-image {
   width: 40%; /* Adjust size */

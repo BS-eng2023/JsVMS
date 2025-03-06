@@ -58,7 +58,7 @@ const addCar = () => {
 
   const selKW = compSelectbox(formElement, "Leistung (kW)", null, () => {});
 
-  createInputField(formElement,"Leistung (PS):","power","number","z. B. 115 PS" );
+ // createInputField(formElement,"Leistung (PS):","power","number","z. B. 115 PS" );
   createInputField(formElement, "Kilometerstand:","mileage","number","z. B. 104000 km");
 
  
@@ -153,6 +153,8 @@ const addCar = () => {
     let carID="car-" + Date.now()+createNumber(100,999);
     golbalData.currentCarId=carID;
     const carsData = {
+        creationDate: new Date().toISOString(),
+        modificationDate: new Date().toISOString(),
         carId: carID,
         userId: golbalData.currentUserId,
         attributes:carData,
@@ -167,13 +169,13 @@ const addCar = () => {
       a.download = `${carsData.carId}.json`;
       a.click();
 
-/* 
-      const fs = require("fs");
+
+      //const fs = require("fs");
       const saveJsonToFile = () => {
         fs.writeFileSync(`../users/${currentUserId}/${carID}/${carID}.json`, JSON.stringify(carsData, null, 2), "utf-8");
         console.log("Datei erfolgreich gespeichert!");
       }
-      */
+      
   } 
     
 

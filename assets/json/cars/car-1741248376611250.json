@@ -1,0 +1,32 @@
+{
+  "carId": "car-1741248376611250",
+  "userId": "user-1741171077537430",
+  "attributes": {
+    "title": "Mercedes-Benz A 180 Urban+AUTOMATIK+LED+KAMERA+8-FACH-BEREIFT",
+    "Marken": "Mercedes-Benz",
+    "Modelle": "E-Klasse",
+    "Baujahre": "2024",
+    "Leistung (kW)": "612",
+    "mileage": "10000",
+    "Kraftstoffe :": "Diesel",
+    "seats": "5",
+    "firstRegistration": "12-2022",
+    "Auto Farbe :": "Silver",
+    "features": [
+      "ABS",
+      "Alloy wheels",
+      "Bluetooth",
+      "CD player",
+      "Central locking",
+      "Daytime running lights",
+      "Electric windows",
+      "ESP",
+      "Isofix",
+      "Navigation system",
+      "Rain sensor",
+      "Winter tyres"
+    ],
+    "carPhotos": {}
+  },
+  "imageURL": "Mercedec-benz.jpg"
+}

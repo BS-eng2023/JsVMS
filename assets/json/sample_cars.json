@@ -1,0 +1,608 @@
+[
+    {
+        "creationDate": "2025-03-06T08:24:49.483528Z",
+        "modificationDate": "2025-03-06T08:24:49.483528Z",
+        "carId": "car-1741249112704650",
+        "userId": "user-1741171077537450",
+        "attributes": {
+            "title": "BMW 5er (2014) - 600 kW, Petrol, Erste Hand, Abgemeldet",
+            "Marken": "BMW",
+            "Modelle": "5er",
+            "Baujahre": "2014",
+            "Leistung (kW)": "600",
+            "mileage": "170653",
+            "Kraftstoffe :": "Petrol",
+            "seats": "5",
+            "firstRegistration": "5-2020",
+            "Auto Farbe :": "Blue",
+            "features": [
+                "ABS",
+                "LED Headlights",
+                "Adaptive Cruise Control",
+                "Bluetooth",
+                "Rear Camera",
+                "Air Conditioning"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "bmw-5er.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:25:49.483528Z",
+        "modificationDate": "2025-03-06T08:25:49.483528Z",
+        "carId": "car-1741249112704651",
+        "userId": "user-1741171077537451",
+        "attributes": {
+            "title": "Volkswagen Polo (1994) - 44 kW, Petrol, Erste Hand",
+            "Marken": "Volkswagen",
+            "Modelle": "Polo",
+            "Baujahre": "1994",
+            "Leistung (kW)": "44",
+            "mileage": "76625",
+            "Kraftstoffe :": "Petrol",
+            "seats": "5",
+            "firstRegistration": "3-2006",
+            "Auto Farbe :": "Blue",
+            "features": [
+                "Navigation System",
+                "LED Headlights",
+                "Parking Sensors",
+                "Lane Assist",
+                "Leather Interior",
+                "Heated Seats",
+                "ABS"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "volkswagen-polo.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:26:49.483528Z",
+        "modificationDate": "2025-03-06T08:26:49.483528Z",
+        "carId": "car-1741249112704652",
+        "userId": "user-1741171077537452",
+        "attributes": {
+            "title": "Volkswagen Golf (1992) - 300 kW, Petrol, Abgemeldet",
+            "Marken": "Volkswagen",
+            "Modelle": "Golf",
+            "Baujahre": "1992",
+            "Leistung (kW)": "300",
+            "mileage": "50284",
+            "Kraftstoffe :": "Petrol",
+            "seats": "7",
+            "firstRegistration": "6-2022",
+            "Auto Farbe :": "Red",
+            "features": [
+                "Air Conditioning",
+                "Bluetooth",
+                "Parking Sensors",
+                "Adaptive Cruise Control",
+                "LED Headlights",
+                "Navigation System",
+                "Lane Assist"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "volkswagen-golf.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:27:49.483528Z",
+        "modificationDate": "2025-03-06T08:27:49.483528Z",
+        "carId": "car-1741249112704653",
+        "userId": "user-1741171077537453",
+        "attributes": {
+            "title": "Audi A4 (2006) - 450 kW, Petrol",
+            "Marken": "Audi",
+            "Modelle": "A4",
+            "Baujahre": "2006",
+            "Leistung (kW)": "450",
+            "mileage": "77214",
+            "Kraftstoffe :": "Petrol",
+            "seats": "5",
+            "firstRegistration": "8-2005",
+            "Auto Farbe :": "Blue",
+            "features": [
+                "Heated Seats",
+                "Parking Sensors",
+                "Air Conditioning",
+                "Leather Interior",
+                "Navigation System"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "audi-a4.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:28:49.483528Z",
+        "modificationDate": "2025-03-06T08:28:49.483528Z",
+        "carId": "car-1741249112704654",
+        "userId": "user-1741171077537454",
+        "attributes": {
+            "title": "Mercedes-Benz C-Klasse (2016) - 510 kW, Electric",
+            "Marken": "Mercedes-Benz",
+            "Modelle": "C-Klasse",
+            "Baujahre": "2016",
+            "Leistung (kW)": "510",
+            "mileage": "175748",
+            "Kraftstoffe :": "Electric",
+            "seats": "2",
+            "firstRegistration": "8-2011",
+            "Auto Farbe :": "Black",
+            "features": [
+                "Adaptive Cruise Control",
+                "Keyless Entry",
+                "Navigation System",
+                "Rear Camera",
+                "Heated Seats",
+                "Lane Assist",
+                "Leather Interior",
+                "LED Headlights"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "mercedes-benz-c-klasse.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:29:49.483528Z",
+        "modificationDate": "2025-03-06T08:29:49.483528Z",
+        "carId": "car-1741249112704655",
+        "userId": "user-1741171077537455",
+        "attributes": {
+            "title": "Audi A3 (2017) - 400 kW, Electric",
+            "Marken": "Audi",
+            "Modelle": "A3",
+            "Baujahre": "2017",
+            "Leistung (kW)": "400",
+            "mileage": "177889",
+            "Kraftstoffe :": "Electric",
+            "seats": "2",
+            "firstRegistration": "7-2009",
+            "Auto Farbe :": "Gray",
+            "features": [
+                "Bluetooth",
+                "Adaptive Cruise Control",
+                "Parking Sensors",
+                "Navigation System",
+                "Leather Interior",
+                "Lane Assist",
+                "Keyless Entry",
+                "Air Conditioning"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "audi-a3.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:30:49.483528Z",
+        "modificationDate": "2025-03-06T08:30:49.483528Z",
+        "carId": "car-1741249112704656",
+        "userId": "user-1741171077537456",
+        "attributes": {
+            "title": "Audi A4 (2021) - 75 kW, Hybrid",
+            "Marken": "Audi",
+            "Modelle": "A4",
+            "Baujahre": "2021",
+            "Leistung (kW)": "75",
+            "mileage": "191280",
+            "Kraftstoffe :": "Hybrid",
+            "seats": "4",
+            "firstRegistration": "9-2016",
+            "Auto Farbe :": "Silver",
+            "features": [
+                "Lane Assist",
+                "Heated Seats",
+                "Air Conditioning",
+                "ABS",
+                "Navigation System",
+                "Keyless Entry",
+                "Rear Camera",
+                "LED Headlights",
+                "Leather Interior"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "audi-a4.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:31:49.483528Z",
+        "modificationDate": "2025-03-06T08:31:49.483528Z",
+        "carId": "car-1741249112704657",
+        "userId": "user-1741171077537457",
+        "attributes": {
+            "title": "Audi A4 (2016) - 450 kW, Electric",
+            "Marken": "Audi",
+            "Modelle": "A4",
+            "Baujahre": "2016",
+            "Leistung (kW)": "450",
+            "mileage": "113444",
+            "Kraftstoffe :": "Electric",
+            "seats": "5",
+            "firstRegistration": "8-1992",
+            "Auto Farbe :": "White",
+            "features": [
+                "Air Conditioning",
+                "Navigation System",
+                "LED Headlights",
+                "Heated Seats",
+                "Keyless Entry",
+                "Leather Interior",
+                "Bluetooth",
+                "Rear Camera",
+                "ABS"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "audi-a4_nnn.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:32:49.483528Z",
+        "modificationDate": "2025-03-06T08:32:49.483528Z",
+        "carId": "car-1741249112704658",
+        "userId": "user-1741171077537458",
+        "attributes": {
+            "title": "Ford Mustang (1988) - 150 kW, Electric",
+            "Marken": "Ford",
+            "Modelle": "Mustang",
+            "Baujahre": "1988",
+            "Leistung (kW)": "150",
+            "mileage": "173928",
+            "Kraftstoffe :": "Electric",
+            "seats": "7",
+            "firstRegistration": "11-2015",
+            "Auto Farbe :": "Silver",
+            "features": [
+                "Lane Assist",
+                "Adaptive Cruise Control",
+                "ABS",
+                "Parking Sensors",
+                "Leather Interior",
+                "Rear Camera",
+                "Heated Seats"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "ford-mustang.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:33:49.483528Z",
+        "modificationDate": "2025-03-06T08:33:49.483528Z",
+        "carId": "car-1741249112704659",
+        "userId": "user-1741171077537459",
+        "attributes": {
+            "title": "Mercedes-Benz E-Klasse (2010) - 90 kW, Electric",
+            "Marken": "Mercedes-Benz",
+            "Modelle": "E-Klasse",
+            "Baujahre": "2010",
+            "Leistung (kW)": "90",
+            "mileage": "45211",
+            "Kraftstoffe :": "Electric",
+            "seats": "7",
+            "firstRegistration": "12-2006",
+            "Auto Farbe :": "Blue",
+            "features": [
+                "Keyless Entry",
+                "Bluetooth",
+                "Rear Camera",
+                "Leather Interior",
+                "Parking Sensors",
+                "LED Headlights"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "mercedes-benz-e-klasse.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:34:49.483528Z",
+        "modificationDate": "2025-03-06T08:34:49.483528Z",
+        "carId": "car-1741249112704660",
+        "userId": "user-1741171077537460",
+        "attributes": {
+            "title": "Ford Mustang (1996) - 150 kW, Petrol",
+            "Marken": "Ford",
+            "Modelle": "Mustang",
+            "Baujahre": "1996",
+            "Leistung (kW)": "150",
+            "mileage": "125020",
+            "Kraftstoffe :": "Petrol",
+            "seats": "7",
+            "firstRegistration": "2-2003",
+            "Auto Farbe :": "Gray",
+            "features": [
+                "ABS",
+                "Lane Assist",
+                "Air Conditioning",
+                "Adaptive Cruise Control",
+                "Leather Interior",
+                "Heated Seats",
+                "Bluetooth"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "ford-mustang_nnn.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:35:49.483528Z",
+        "modificationDate": "2025-03-06T08:35:49.483528Z",
+        "carId": "car-1741249112704661",
+        "userId": "user-1741171077537461",
+        "attributes": {
+            "title": "Audi A4 (2023) - 450 kW, Petrol",
+            "Marken": "Audi",
+            "Modelle": "A4",
+            "Baujahre": "2023",
+            "Leistung (kW)": "450",
+            "mileage": "69440",
+            "Kraftstoffe :": "Petrol",
+            "seats": "2",
+            "firstRegistration": "2-1997",
+            "Auto Farbe :": "Black",
+            "features": [
+                "Keyless Entry",
+                "Parking Sensors",
+                "LED Headlights",
+                "Air Conditioning",
+                "Adaptive Cruise Control"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "audi-a4-black.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:36:49.483528Z",
+        "modificationDate": "2025-03-06T08:36:49.483528Z",
+        "carId": "car-1741249112704662",
+        "userId": "user-1741171077537462",
+        "attributes": {
+            "title": "Ford Focus (2000) - 75 kW, Hybrid",
+            "Marken": "Ford",
+            "Modelle": "Focus",
+            "Baujahre": "2000",
+            "Leistung (kW)": "75",
+            "mileage": "15114",
+            "Kraftstoffe :": "Hybrid",
+            "seats": "2",
+            "firstRegistration": "5-2015",
+            "Auto Farbe :": "Blue",
+            "features": [
+                "Adaptive Cruise Control",
+                "LED Headlights",
+                "Keyless Entry",
+                "Lane Assist",
+                "ABS"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "ford-focus-blue.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:37:49.483528Z",
+        "modificationDate": "2025-03-06T08:37:49.483528Z",
+        "carId": "car-1741249112704663",
+        "userId": "user-1741171077537463",
+        "attributes": {
+            "title": "Ford Fiesta (1976) - 200 kW, Petrol",
+            "Marken": "Ford",
+            "Modelle": "Fiesta",
+            "Baujahre": "1976",
+            "Leistung (kW)": "200",
+            "mileage": "133044",
+            "Kraftstoffe :": "Petrol",
+            "seats": "5",
+            "firstRegistration": "5-2025",
+            "Auto Farbe :": "Gray",
+            "features": [
+                "ABS",
+                "LED Headlights",
+                "Air Conditioning",
+                "Rear Camera",
+                "Lane Assist",
+                "Heated Seats",
+                "Leather Interior",
+                "Parking Sensors",
+                "Adaptive Cruise Control"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "ford-fiesta.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:38:49.483528Z",
+        "modificationDate": "2025-03-06T08:38:49.483528Z",
+        "carId": "car-1741249112704664",
+        "userId": "user-1741171077537464",
+        "attributes": {
+            "title": "Volkswagen Golf (1991) - 60 kW, Petrol",
+            "Marken": "Volkswagen",
+            "Modelle": "Golf",
+            "Baujahre": "1991",
+            "Leistung (kW)": "60",
+            "mileage": "170924",
+            "Kraftstoffe :": "Petrol",
+            "seats": "4",
+            "firstRegistration": "8-2005",
+            "Auto Farbe :": "Red",
+            "features": [
+                "Adaptive Cruise Control",
+                "Leather Interior",
+                "Bluetooth",
+                "Parking Sensors",
+                "Lane Assist",
+                "LED Headlights"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "volkswagen-golf-red.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:39:49.483528Z",
+        "modificationDate": "2025-03-06T08:39:49.483528Z",
+        "carId": "car-1741249112704665",
+        "userId": "user-1741171077537465",
+        "attributes": {
+            "title": "Mercedes-Benz S-Klasse (2014) - 120 kW, Hybrid",
+            "Marken": "Mercedes-Benz",
+            "Modelle": "S-Klasse",
+            "Baujahre": "2014",
+            "Leistung (kW)": "120",
+            "mileage": "112011",
+            "Kraftstoffe :": "Hybrid",
+            "seats": "2",
+            "firstRegistration": "8-2007",
+            "Auto Farbe :": "Blue",
+            "features": [
+                "Keyless Entry",
+                "ABS",
+                "Lane Assist",
+                "Parking Sensors",
+                "Heated Seats",
+                "Rear Camera",
+                "Navigation System",
+                "LED Headlights"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "mercedes-benz-s-klasse.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:40:49.483528Z",
+        "modificationDate": "2025-03-06T08:40:49.483528Z",
+        "carId": "car-1741249112704666",
+        "userId": "user-1741171077537466",
+        "attributes": {
+            "title": "Mercedes-Benz GLC (2024) - 120 kW, Diesel",
+            "Marken": "Mercedes-Benz",
+            "Modelle": "GLC",
+            "Baujahre": "2024",
+            "Leistung (kW)": "120",
+            "mileage": "182717",
+            "Kraftstoffe :": "Diesel",
+            "seats": "2",
+            "firstRegistration": "3-1997",
+            "Auto Farbe :": "Silver",
+            "features": [
+                "Lane Assist",
+                "Bluetooth",
+                "Rear Camera",
+                "Air Conditioning",
+                "Keyless Entry",
+                "Heated Seats",
+                "Navigation System",
+                "Leather Interior"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "mercedes-benz-glc.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:41:49.483528Z",
+        "modificationDate": "2025-03-06T08:41:49.483528Z",
+        "carId": "car-1741249112704667",
+        "userId": "user-1741171077537467",
+        "attributes": {
+            "title": "BMW X3 (2011) - 105 kW, Petrol",
+            "Marken": "BMW",
+            "Modelle": "X3",
+            "Baujahre": "2011",
+            "Leistung (kW)": "105",
+            "mileage": "82222",
+            "Kraftstoffe :": "Petrol",
+            "seats": "4",
+            "firstRegistration": "12-2000",
+            "Auto Farbe :": "Red",
+            "features": [
+                "Lane Assist",
+                "Heated Seats",
+                "Navigation System",
+                "Leather Interior",
+                "Bluetooth",
+                "Keyless Entry",
+                "Air Conditioning",
+                "LED Headlights"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "bmw-x3.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:42:49.483528Z",
+        "modificationDate": "2025-03-06T08:42:49.483528Z",
+        "carId": "car-1741249112704668",
+        "userId": "user-1741171077537468",
+        "attributes": {
+            "title": "Volkswagen Passat (2012) - 280 kW, Petrol",
+            "Marken": "Volkswagen",
+            "Modelle": "Passat",
+            "Baujahre": "2012",
+            "Leistung (kW)": "280",
+            "mileage": "199726",
+            "Kraftstoffe :": "Petrol",
+            "seats": "5",
+            "firstRegistration": "6-2020",
+            "Auto Farbe :": "Red",
+            "features": [
+                "Rear Camera",
+                "Heated Seats",
+                "Parking Sensors",
+                "ABS",
+                "Air Conditioning"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "volkswagen-passat.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T08:43:49.483528Z",
+        "modificationDate": "2025-03-06T08:43:49.483528Z",
+        "carId": "car-1741249112704669",
+        "userId": "user-1741171077537469",
+        "attributes": {
+            "title": "Mercedes-Benz GLC (2025) - 120 kW, Hybrid",
+            "Marken": "Mercedes-Benz",
+            "Modelle": "GLC",
+            "Baujahre": "2025",
+            "Leistung (kW)": "120",
+            "mileage": "176256",
+            "Kraftstoffe :": "Hybrid",
+            "seats": "4",
+            "firstRegistration": "10-2022",
+            "Auto Farbe :": "Red",
+            "features": [
+                "Leather Interior",
+                "ABS",
+                "Navigation System",
+                "Air Conditioning",
+                "Lane Assist",
+                "Rear Camera",
+                "Keyless Entry",
+                "LED Headlights"
+            ],
+            "carPhotos": {}
+        },
+        "imageURL": "mercedes-benz-glc-red.jpg"
+    },
+    {
+        "creationDate": "2025-03-06T10:11:46.122Z",
+        "modificationDate": "2025-03-06T10:11:46.122Z",
+        "carId": "car-1741255906122354",
+        "userId": null,
+        "attributes": {
+          "title": "neues Auto",
+          "Marken": "BMW",
+          "Modelle": "X3",
+          "Baujahre": "2021",
+          "Leistung (kW)": "105",
+          "mileage": "120000",
+          "Kraftstoffe :": "Benzin",
+          "seats": "7",
+          "firstRegistration": "12-2200",
+          "Auto Farbe :": "Beige",
+          "features": [
+            "ABS",
+            "Bluetooth",
+            "Winter tyres"
+          ],
+          "carPhotos": {}
+        },
+        "imageURL": "87cc2be037c24032.jpg"
+      }
+]
