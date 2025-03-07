@@ -8,7 +8,7 @@ let currentCarId=null;
         "-- Bitte wählen --",
         "Private",
         "Handler",
-        "Firmen Wagen",
+        "Firem wagen "
       ];
  const carColors= [
     "White",
@@ -50,7 +50,7 @@ const kraftstoffe = [
     "Diesel",
     "Elektro",
     "Hybrid",
-  ];
+     ];
 const brands = [
     {
       markenname: "Volkswagen",

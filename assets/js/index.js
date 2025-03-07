@@ -8,6 +8,8 @@ import logIn from "./logIn.js";
 //import populateFilters from "./components/populateFilters.js";
 import displayCars from "./components/displayCars.js";
 import applyFilters from "./components/applyFilters.js";
+import populateFilters from "./components/populateFilters.js";
+
 import login from "./logIn.js";
 
 //disable add new car button //
@@ -29,32 +31,24 @@ const appendEventListeners = () => {
   elements.addNewUser.addEventListener("click", addUser);
 };
 
-function populateFilters(carsData) {
-  const brandFilter = document.getElementById("brand-filter");
-  const fuelFilter = document.getElementById("fuel-filter");
 
-  const brands = new Set();
-  const fuels = new Set();
-
-  carsData.forEach((car) => {
-    brands.add(car.attributes["Marken"]);
-    fuels.add(car.attributes["Kraftstoffe :"]);
-  });
-
-  brands.forEach((brand) => {
-    const option = document.createElement("option");
-    option.value = brand;
-    option.textContent = brand;
-    brandFilter.appendChild(option);
-  });
-
-  fuels.forEach((fuel) => {
-    const option = document.createElement("option");
-    option.value = fuel;
-    option.textContent = fuel;
-    fuelFilter.appendChild(option);
-  });
+const intersectionHandler = entries => {
+   console.log(entries);
+  for(let entry of entries){
+      if(entry.isIntersecting){
+          entry.target.classList.add('highlight');
+          
+          setTimeout(
+              () => {
+                  entry.target.classList.remove('highlight');
+              }, 3000
+          )
+      }
+  }
 }
+
+const myObserver = new IntersectionObserver(intersectionHandler);
+
 
 const init = () => {
   //add car script
@@ -81,6 +75,14 @@ const init = () => {
   const buttonApllyFilter = document.querySelector(".applyFilters");
   buttonApllyFilter.addEventListener("click", function () {
     applyFilters(elements.data);
+
+    //observer_intersection
+    const allSections = document.querySelectorAll('h2');
+    console.log(allSections);
+
+    for(let section of allSections){
+        myObserver.observe(section);
+    }
   });
 };
 

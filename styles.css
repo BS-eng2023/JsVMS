@@ -8,6 +8,12 @@
   --card: #d3e6cb;
   --button: #731f0d;
   --hover: #382503;
+
+    --highlight-bg: rgb(159, 228, 163);
+    --highlight-border: rgb(235, 227, 191);
+    --highlight-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --highlight-transition: all 300ms ease-in-out;
+
 }
 
 /* General*/
@@ -73,7 +79,7 @@
   grid-template-areas:
     "header header header"
     "left main right"
-    "footer footer right";
+    "footer footer footer";
   grid-template-columns: 300px 2fr auto;
   grid-template-rows: auto 1fr auto;
    height: 100vh;
@@ -409,4 +415,51 @@ input[type="checkbox"]:checked::before {
   background-color: #d1ecf1; /* Light blue */
   border-color: #bee5eb;
   color: #0c5460; /* Dark blue */
+}
+
+
+/*observer_intersection*/
+
+
+
+.highlight {
+  
+  background-color: var(--highlight-bg);
+  border: 1px solid var(--highlight-border);
+  box-shadow: var(--highlight-shadow);
+  transition: var(--highlight-transition);
+  animation: pulse 1.5s infinite; /* Optional: Add pulsating animation */
+ 
+
+}
+
+.highlight:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.highlight:focus {
+  outline: 2px solid blue; /* Add focus outline for accessibility */
+  outline-offset: 2px;
+}
+
+
+
+
+/*range filter */
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.filter-group input[type="range"] {
+  width: 400px;
+  margin-right: 10px;
+}
+
+.filter-group span {
+  font-weight: bold;
 }

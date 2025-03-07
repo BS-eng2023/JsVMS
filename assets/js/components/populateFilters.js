@@ -1,5 +1,5 @@
 "use strict";
-//import golbalData from "./golbalData.js";
+import golbalData from "./golbalData.js";
 
 function populateFilters(carsData) {
     const brandFilter = document.getElementById('brand-filter');
@@ -9,7 +9,7 @@ function populateFilters(carsData) {
     const fuels = new Set();
     
     carsData.forEach(car => {
-        brands.add(car.brand);
+        brands.add(car.attributes["Marken"]);
         fuels.add(car.attributes["Kraftstoffe :"]);
     });
     

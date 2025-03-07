@@ -49,7 +49,7 @@ const login = () => {
 
   let isLoggedIn = false;
   const Element = document.createElement("div");
-  Element.className=".component";
+  Element.className = "car-listing";
 
   loginButton.addEventListener("click", function () {
     // Hier sollte eine echte Login-Überprüfung erfolgen
@@ -64,7 +64,7 @@ const login = () => {
         const user = users.find(user => user.attributes.userName === currentName.value);
         if (user && user.attributes.userPassword === currentPassword.value) {
           Element.innerText ="Login successful! Welcome, " + currentName.value + "!";
-          Element.classList.add(".login-message",".login-message.success");
+          Element.classList.add("login-message","login-message.success");
 
           loginSuccess = true;
           elements.main.appendChild(Element);
@@ -72,6 +72,8 @@ const login = () => {
         } else {
           Element.innerText = "Invalid username or password. Please try again.";
           elements.main.appendChild(Element);
+          Element.classList.add("login-message","login-message.error");
+
           loginSuccess = false;
         }
         if (loginSuccess) {

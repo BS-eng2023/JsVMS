@@ -47,6 +47,27 @@
             <select id="fuel-filter">
                 <option value="">All Fuel Types</option>
             </select>
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label >.</label>
+                    <label for="registration-min">Baujahre von:</label>
+                  <input type="range" id="registration-min" min="1950" max="2025" value="1950">
+                  <span id="registration-min-value">1950</span>
+            
+                  <label for="registration-max">bis:</label>
+                  <input type="range" id="registration-max" min="1950" max="2025" value="2025">
+                  <span id="registration-max-value">2025</span>
+                </div>
+              
+                <div class="filter-group">
+                  <label for="mileage-min">Kilometerstand von:</label>
+                  <input type="number" id="mileage-min" placeholder="Min">
+                  <label for="mileage-max">bis:</label>
+                  <input type="number" id="mileage-max" placeholder="Max">
+                </div>
+              </div>
+              
+    
             <button style="font-size:18px" class="applyFilters"><i class="fas fa-filter"></i>  Filter</button>
             <!-- <button style="font-size:18px" onclick="applyFilters()"><i class="fas fa-filter"></i>  Filter</button>   --> 
 

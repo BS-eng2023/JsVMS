@@ -604,5 +604,33 @@
           "carPhotos": {}
         },
         "imageURL": "87cc2be037c24032.jpg"
+      },
+
+      {
+        "creationDate": "2025-03-07T09:56:47.361Z",
+        "modificationDate": "2025-03-07T09:56:47.361Z",
+        "carId": "car-1741341407361315",
+        "userId": null,
+        "attributes": {
+          "title": "vw erste hand ",
+          "Marken": "Volkswagen",
+          "Modelle": "Passat",
+          "Baujahre": "2014",
+          "Leistung (kW)": "280",
+          "mileage": "12000",
+          "Kraftstoffe :": "Diesel",
+          "seats": "5",
+          "firstRegistration": "12-2022",
+          "Auto Farbe :": "Blue",
+          "features": [
+            "ABS",
+            "Bluetooth",
+            "CD player",
+            "Central locking",
+            "ESP"
+          ],
+          "carPhotos": {}
+        },
+        "imageURL": "vw_passat.jpg"
       }
 ]
