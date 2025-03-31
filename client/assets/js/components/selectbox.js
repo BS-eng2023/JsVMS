@@ -18,6 +18,7 @@ const selectbox = (inputParent, legend, options, onSelect) => {
   const elSelect = dom.create({
     type: "select",
     parent: container,
+    content: "",
   });
 
   dom.create({
@@ -47,9 +48,10 @@ const selectbox = (inputParent, legend, options, onSelect) => {
   container.update = (options) => {
     elSelect.innerHTML = "";
     for (let option of options) {
-      const elOption = document.createElement("option");
+      dom.create({ type: "option",content: option, parent: elSelect });
+   /*    const elOption = document.createElement("option");
       elOption.innerHTML = option;
-      elSelect.append(elOption);
+      elSelect.append(elOption); */
     }
   };
 

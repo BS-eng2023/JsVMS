@@ -1,16 +1,17 @@
 "use strict";
+import dom from "../dom.js";
+
 function createCheckboxes(parentElement, name, valuesArray) {
   valuesArray.forEach((value) => {
     const container = dom.create({
       type: "div",
-      parent: inputParent,
+      parent: parentElement,
     });
 
     const checkbox = dom.create({
       type: "input",
       parent: container,
       name:"features",
-      content: labelText,
       value: value,
       id:`${name}-${value.replace(/\s+/g, "").toLowerCase()}`, // Create unique ID
       attr: {
