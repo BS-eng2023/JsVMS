@@ -1,5 +1,5 @@
 "use strict";
-import golbalData from "./golbalData.js";
+import golbalData from "../golbalData.js";
 import elements from "../elements.js";
 
 function displayCars(cars) {

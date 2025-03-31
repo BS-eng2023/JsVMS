@@ -1,7 +1,7 @@
 "use strict";
 import elements from "./elements.js";
 import createInputField from "./components/inputData.js";
-import golbalData from "./components/golbalData.js";
+import golbalData from "./golbalData.js";
 
 const login = () => {
   elements.main.innerHTML = "";
@@ -45,7 +45,7 @@ const login = () => {
 
   // Standardmäßig deaktiviert
   addNewCarButton.title = "Bitte zuerst anmelden!";
-  addNewCarButton.disabled = true;
+ // addNewCarButton.disabled = true;
 
   let isLoggedIn = false;
   const Element = document.createElement("div");
@@ -57,7 +57,7 @@ const login = () => {
     let loginSuccess = false;
     let users = null;
     // Login function
-    fetch("../assets/json/users.json")
+    fetch("./assets/json/users.json")
       .then((response) => response.json())
       .then((attribute) => {
         users = attribute;

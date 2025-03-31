@@ -5,17 +5,16 @@ import elements from "./elements.js";
 import addCar from "./addCar.js";
 import addUser from "./addUser.js";
 import logIn from "./logIn.js";
-//import populateFilters from "./components/populateFilters.js";
-import displayCars from "./components/displayCars.js";
-import applyFilters from "./components/applyFilters.js";
-import populateFilters from "./components/populateFilters.js";
+import displayCars from "./helpers/displayCars.js";
+import applyFilters from "./helpers/applyFilters.js";
+import populateFilters from "./helpers/populateFilters.js";
 
 import login from "./logIn.js";
 
 //disable add new car button //
 const addNewCarButton = document.getElementById("addNewCar");
 addNewCarButton.title = "Bitte zuerst anmelden!";
-addNewCarButton.disabled = true;
+ addNewCarButton.disabled = true;
 
 const domMapping = () => {
   elements.main = document.querySelector(".main");

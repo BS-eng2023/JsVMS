@@ -1,5 +1,5 @@
 "use strict";
-import golbalData from "./golbalData.js";
+import golbalData from "../golbalData.js";
 
 function populateFilters(carsData) {
     const brandFilter = document.getElementById('brand-filter');

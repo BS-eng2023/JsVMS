@@ -3,7 +3,7 @@ import elements from "./elements.js";
 import compSelectbox from "./components/selectbox.js";
 import createInputField from "./components/inputData.js";
 import createCheckboxes from "./components/checkboxes.js";
-import golbalData from "./components/golbalData.js";
+import golbalData from "./golbalData.js";
 
 
 const addUser = () => {
