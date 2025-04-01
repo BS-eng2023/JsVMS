@@ -1,5 +1,6 @@
 "use strict";
 import golbalData from "../golbalData.js";
+import dom from "../dom.js";
 
 function populateFilters(carsData) {
     const brandFilter = document.getElementById('brand-filter');
@@ -14,17 +15,19 @@ function populateFilters(carsData) {
     });
     
     brands.forEach(brand => {
-        const option = document.createElement('option');
-        option.value = brand;
-        option.textContent = brand;
-        brandFilter.appendChild(option);
-    });
+        dom.create({
+            type: "option",
+            content: brand,
+            parent: brandFilter,
+          });
+         });
     
     fuels.forEach(fuel => {
-        const option = document.createElement('option');
-        option.value = fuel;
-        option.textContent = fuel;
-        fuelFilter.appendChild(option);
+        dom.create({
+            type: "option",
+            content: fuel,
+            parent: fuelFilter,
+          });
     });
 }
 export default populateFilters;

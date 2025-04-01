@@ -1,14 +1,16 @@
 "use strict";
 import golbalData from "../golbalData.js";
 import elements from "../elements.js";
+import dom from "../dom.js";
 
 function displayCars(cars) {
     const container = document.querySelector(".main");
     container.innerHTML = "";
 
     cars.forEach((car) => {
-        const carElement = document.createElement("div");
-        carElement.className = "car-listing";
+        const carElement= dom.create({
+            cssClassName: "car-listing",
+          });
 
         // Dynamically generate attribute list
         let attributesHTML = "";

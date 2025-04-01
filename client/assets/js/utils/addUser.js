@@ -1,21 +1,33 @@
 "use strict";
-import elements from "./elements.js";
-import compSelectbox from "./components/selectbox.js";
-import createInputField from "./components/inputData.js";
-import createCheckboxes from "./components/checkboxes.js";
-import golbalData from "./golbalData.js";
+import compSelectbox from "../components/selectbox.js";
+import createInputField from "../components/inputData.js";
+import createCheckboxes from "../components/checkboxes.js";
+import User from "../components/checkboxes.js";
+
+import golbalData from "../golbalData.js";
+import elements from "../elements.js";
+import dom from "../dom.js";
+//import uuidv4  from "uuid";
+//import { v4 as uuidv4 } from 'uuid';
+//const { v4: uuidv4 } = require('uuid');
 
 
 const addUser = () => {
     const createNumber = (min, max) => ~~(Math.random() * (max - min + 1) + min);
 
     elements.main.innerHTML = "";
-    const elSelction = document.createElement("h2");
-    elSelction.innerHTML = "Benutzer einfugen";
-    elements.main.append(elSelction);
-    const formElement  = document.createElement("form");
-    formElement.className = 'userForm'; 
-    elements.main.appendChild(formElement);
+    const elSelect = dom.create({
+        type: "h2",
+        parent: elements.main,
+        content: "Benutzer einfugen",
+      });
+
+      const formElement = dom.create({
+        type: "form",
+        parent: elements.main,
+        cssClassName: 'userForm',
+      });
+    
     createInputField(formElement, "Benutzer Name:","userName","text","benutzername");
     createInputField(formElement, "Passwort:","userPassword","password","password");
     createInputField(formElement, "Email Adresse:","userMail","mail","muster@mustermail.de");
@@ -59,15 +71,21 @@ const addUser = () => {
     //return data;
     /* user data object*/
     let userID= "user-" + Date.now()+createNumber(100,999);
+   //const userID = uuidv4();
+
     golbalData.currentUserId=userID;
-    const user = {
+    const jsonUser = {
         _id:userID,
         attributes:userData,
              };
+//use the user class 
+            const userClass = new User();
+            const userFromJson =  userClass.fromJson(jsonUser);
+
             // Save the document to PouchDB
             const db = new PouchDB('my_database');
 
-            db.put(user).then(response => {
+            db.put(userFromJson).then(response => {
                 console.log("Vehicle saved:", response);
             }).catch(error => {
                 console.error("Error saving vehicle:", error);

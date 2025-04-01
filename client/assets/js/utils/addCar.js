@@ -1,10 +1,11 @@
 "use strict";
 
-import elements from "./elements.js";
-import compSelectbox from "./components/selectbox.js";
-import createInputField from "./components/inputData.js";
-import createCheckboxes from "./components/checkboxes.js";
-import golbalData from "./golbalData.js";
+import compSelectbox from "../components/selectbox.js";
+import createInputField from "../components/inputData.js";
+import createCheckboxes from "../components/checkboxes.js";
+import golbalData from "../golbalData.js";
+import elements from "../elements.js";
+import dom from "../dom.js";
 
 
 
@@ -106,8 +107,8 @@ const addCar = () => {
             img.src = e.target.result;
             img.style.maxWidth = "400px";
             img.style.margin = "5px";
-            console.log(img);
-            console.log(file);
+            //console.log(img);
+            //console.log(file);
 
             preview.appendChild(img);
           };

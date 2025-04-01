@@ -2,14 +2,12 @@
 
 //// add car script
 import elements from "./elements.js";
-import addCar from "./addCar.js";
-import addUser from "./addUser.js";
-import logIn from "./logIn.js";
+import addCar from "./utils/addCar.js";
+import addUser from "./utils/addUser.js";
+import logIn from "./utils/logIn.js";
 import displayCars from "./helpers/displayCars.js";
 import applyFilters from "./helpers/applyFilters.js";
 import populateFilters from "./helpers/populateFilters.js";
-
-import login from "./logIn.js";
 
 //disable add new car button //
 const addNewCarButton = document.getElementById("addNewCar");
@@ -53,7 +51,7 @@ const init = () => {
   //add car script
   domMapping();
   appendEventListeners();
-  login();
+  logIn();
   
   fetch("../assets/json/sample_cars.json")
     .then((response) => response.json())

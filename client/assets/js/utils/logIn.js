@@ -1,9 +1,10 @@
 "use strict";
-import elements from "./elements.js";
-import createInputField from "./components/inputData.js";
-import golbalData from "./golbalData.js";
+import createInputField from "../components/inputData.js";
+import golbalData from "../golbalData.js";
+import dom from "../dom.js";
+import elements from "../elements.js";
 
-const login = () => {
+const logIn = () => {
   elements.main.innerHTML = "";
   const elSelction = document.createElement("h2");
   elSelction.innerHTML = "Anmelden";
@@ -93,4 +94,4 @@ const login = () => {
     // Check if the user exists and the password matches
   });
 };
-export default login;
+export default logIn;
