@@ -1,11 +1,14 @@
 // API endpoints for vehicle CRUD operations.
 
-const express = require("express");
+'use strict';
+
+import express from 'express';
+const router = express.Router();
+import database from '../db/connection.js';
 const { getAllVehicles, getVehicleById } = require("../controllers/vehicleController.js");
 
-const router = express.Router();
 
 router.get("/", getAllVehicles);
 router.get("/:id", getVehicleById);
 
-module.exports = router;
+export default router;

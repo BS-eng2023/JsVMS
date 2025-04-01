@@ -2,13 +2,18 @@
 
 import express from 'express';
 import fs from 'fs';
+import betterOpn from 'better-opn';
+import userRouter from './routes/userRoutes.js';
+//import userRouter from './routes/index.js';
+
+import database from './db/connection.js';
 
 const pathLog = './log/access.log';
 const pathErr = './log/error.log';
 
 const server = express();
 
-server.use((request, response, next) => {
+  server.use((request, response, next) => {
     // console.log(`Pfad wurde nicht gefunden: ${request.url}`);
     // Der geladene Pfad soll in eine Text-Datei ausgegeben werden
     let logContent = `${new Date().toLocaleString()} - ${request.url}\n`;
@@ -28,10 +33,12 @@ server.use((request, response, next) => {
             else next();
         }
     )
-})
+}) 
 
-server.use(express.static('../client'));
+server.use(express.static('../client', {
+    extensions: ['html'] }));
 
+/*
 server.use((request, response, next) => {
 
     // console.log(`Pfad wurde nicht gefunden: ${request.url}`);
@@ -59,16 +66,30 @@ server.use((request, response, next) => {
                     <img width="200" src="https://img.freepik.com/vektoren-kostenlos/hoppla-404-fehler-mit-einer-kaputten-roboterkonzeptillustration_114360-5529.jpg">
                 `)
             }
+          
         }
     )
-
-})
+}
+)  */
+server.use(express.json());
+server.use(userRouter);
 //
 const init = () => {
-    server.listen(3000, err => {
-        if (err) console.warn(err);
-        else console.log('Server ist bereit');
-    })
+    // Erste die Datenbanken erzeugen ...
+    database.init().then(
+        () => {
+            // .. dann den Webserver starten
+            server.listen(3000, err => {
+                if (err) console.log(err);
+                else{
+                    console.log('Server läuft');
+                    betterOpn('http://localhost:3000');
+                } 
+            });
+        }
+    )
 }
+
+
 
 init();
