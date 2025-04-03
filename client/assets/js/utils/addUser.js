@@ -132,43 +132,15 @@ const addUser = () => {
         console.error("Error creating user:", error.message);
       });
 
-    /*          // Save the document to PouchDB
-            const db = new PouchDB('my_database');
+   
 
-            db.put(userFromJson).then(response => {
-                console.log("Vehicle saved:", response);
-            }).catch(error => {
-                console.error("Error saving vehicle:", error);
-            }); */
-
-    /*   filename="../json/cars";
-             writeFileSync(`${filename}.json`, JSON.stringify(user, null, 2)); */
-
-    /*   //function saveJSON() {
-                console.log("Current Page Directory:", window.location.href);
-
-             const xhr = new XMLHttpRequest();
-             //xhr.open("POST", "./cars.json", true);
-             //xhr.open("POST", "../json/cars.json", true);
-             xhr.open("POST", "http://127.0.0.1:5501/index.html", true);
-
-             xhr.setRequestHeader("Content-Type", "application/json");
-                      xhr.onreadystatechange = function () {
-                 if (xhr.readyState === 4 && xhr.status === 200) {
-                     console.log("JSON updated successfully:", xhr.responseText);
-                 }
-             };
-         
-             xhr.send(JSON.stringify(user)); */
-    //}
-
-    const blob = new Blob([JSON.stringify(jsonUser, null, 2)], {
+   /*  const blob = new Blob([JSON.stringify(jsonUser, null, 2)], {
       type: "application/json",
     });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
     a.download = `${jsonUser.userId}.json`;
-    a.click();
+    a.click(); */
   }
 
   document.querySelector(".adduser").addEventListener("click", function () {

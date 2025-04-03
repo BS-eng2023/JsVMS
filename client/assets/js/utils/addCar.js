@@ -178,14 +178,14 @@ const addCar = () => {
                .catch((error) => {
                  console.error("Error creating user:", error.message);
                });
-
+/* 
       const blob = new Blob([JSON.stringify(jsonCar, null, 2)], {
         type: "application/json",
       });
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
       a.download = `${jsonCar.carId}.json`;
-      a.click();
+      a.click(); */
 
 
       //const fs = require("fs");

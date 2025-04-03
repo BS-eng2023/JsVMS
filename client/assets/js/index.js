@@ -8,7 +8,7 @@ import logIn from "./utils/logIn.js";
 import displayCars from "./helpers/displayCars.js";
 import applyFilters from "./helpers/applyFilters.js";
 import populateFilters from "./helpers/populateFilters.js";
-
+import carApi from "./APIs/carApi.js";
 //disable add new car button //
 const addNewCarButton = document.getElementById("addNewCar");
 addNewCarButton.title = "Bitte zuerst anmelden!";
@@ -53,7 +53,23 @@ const init = () => {
   appendEventListeners();
   logIn();
   
-  fetch("../assets/json/sample_cars.json")
+  carApi.loadAllCars()
+
+  
+    .then(cars => {
+      console.log('Loaded cars:', cars);
+      // Work with your cars data here
+    elements.data = cars;
+    populateFilters(cars);
+    displayCars(cars);})
+  .catch(error => {
+    console.error('Error loading cars:', error);
+    // Handle errors here
+  });
+
+/*     
+//load from json file 
+// fetch("../assets/json/sample_cars.json")
     .then((response) => response.json())
     .then((data) => {
       elements.data = data;
@@ -61,7 +77,7 @@ const init = () => {
       displayCars(data);
     })
     .catch((error) => console.error("Error loading the JSON file:", error));
-
+ */
   //to display Filter bar on the right side
   const buttonDisplayFilter = document.querySelector("#displayfilter");
   buttonDisplayFilter.addEventListener("click", function () {

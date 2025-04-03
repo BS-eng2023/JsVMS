@@ -30,7 +30,21 @@ const carApi = {
         })
         .then(data => data.payload);
     },
-
+    loadAllCars() {
+        return fetch('/loadAllCars')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.status === 'error') {
+                    throw new Error(data.error || 'Failed to load cars');
+                }
+                return data.payload;
+            });
+    },
     getCar(carId) {
         return fetch(`/api/cars/${carId}`)
         .then(response => {
