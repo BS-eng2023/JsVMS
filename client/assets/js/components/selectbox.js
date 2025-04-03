@@ -19,6 +19,7 @@ const selectbox = (inputParent, legend, options, onSelect) => {
     type: "select",
     parent: container,
     content: "",
+    name:legend
   });
 
   dom.create({

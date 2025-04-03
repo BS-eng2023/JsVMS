@@ -51,16 +51,16 @@ const database = {
           };  */
          
 
-        return dbUsers.insert(userDoc);
+        return dbUsers.insert(userData);
     },
 
     loadUser(userId) {
-        const dbUsers = dbConn.use('users');
-        return dbUsers.get(userId);
+        const dbUsers = dbConn.use('vms');
+        return dbUsers.get('vms');
     },
 
     loadAllUsers() {
-        const dbUsers = dbConn.use('users');
+        const dbUsers = dbConn.use('vms');
         
         return dbUsers.list({ include_docs: true }).then(
             result => result.rows.map(row => row.doc)
@@ -68,12 +68,12 @@ const database = {
     },
 
     removeUser(user) {
-        const dbUsers = dbConn.use('users');
+        const dbUsers = dbConn.use('vms');
         return dbUsers.destroy(user._id, user._rev);
     },
 
     updateUser(userId, updateData) {
-        const dbUsers = dbConn.use('users');
+        const dbUsers = dbConn.use('vms');
         
         return dbUsers.get(userId).then(
             doc => {
