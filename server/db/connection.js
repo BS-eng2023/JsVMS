@@ -23,35 +23,11 @@ const database = {
         );
     },
 
+
+    // user DB methods
     saveUser(userData) {
         const dbUsers = dbConn.use('vms');
-        
-        const userDoc = {
-            _id: `user_${Date.now()}`,
-            type: 'user',
-            name: userData.name,
-            email: userData.email,
-            phone: userData.phone,
-            address: userData.address,
-            userType: userData.type,
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString()
-        }; 
-         
- /*      const userDoc = {
-            "_id": "user_123456789",
-            "type": "user",
-            "name": "John Doe",
-            "email": "john@example.com",
-            "phone": "123-456-7890",
-            "address": "123 Main St",
-            "userType": "Customer",
-            "createdAt": "2023-05-20T12:00:00.000Z",
-            "updatedAt": "2023-05-20T12:00:00.000Z",
-          };  */
-         
-
-        return dbUsers.insert(userData);
+                return dbUsers.insert(userData);
     },
 
     loadUser(userId) {
@@ -85,7 +61,74 @@ const database = {
                 return dbUsers.insert(updatedDoc);
             }
         );
-    }
-};
+    },
+
+    // car DB methods
+        saveCar(carData) {
+            const dbCars = dbConn.use('vms');  'vms'
+            return dbCars.insert(carData);
+        },
+    
+        loadCar(carId) {
+            const dbCars = dbConn.use('vms');
+            return dbCars.get(carId); // Directly get by carId
+        },
+    
+        loadAllCars() {
+            const dbCars = dbConn.use('vms');
+            
+            return dbCars.list({ include_docs: true }).then(
+                result => result.rows.map(row => row.doc)
+            );
+        },
+    
+        removeCar(car) {
+            const dbCars = dbConn.use('vms');
+            return dbCars.destroy(car._id, car._rev);
+        },
+    
+        updateCar(carId, updateData) {
+            const dbCars = dbConn.use('vms');
+            
+            return dbCars.get(carId).then(
+                doc => {
+                    const updatedDoc = {
+                        ...doc,
+                        ...updateData,
+                        modificationDate: new Date().toISOString() // Using car's modificationDate
+                    };
+                    return dbCars.insert(updatedDoc);
+                }
+            );
+        },
+    
+        // Additional car-specific methods
+        getCarsByUser(userId) {
+            const dbCars = dbConn.use('vms');
+            
+            return dbCars.find({
+                selector: {
+                    userId: userId
+                }
+            }).then(result => result.docs);
+        },
+    
+        searchCars(searchParams) {
+            const dbCars = dbConn.use('vms');
+            
+            return dbCars.find({
+                selector: {
+                    $or: [
+                        { 'attributes.Marken': searchParams.make },
+                        { 'attributes.Modelle': searchParams.model },
+                        { 'attributes.Baujahre': searchParams.year },
+                        { 'attributes.Kraftstoffe :': searchParams.fuelType }
+                    ]
+                }
+            }).then(result => result.docs);
+        }
+    };
+    
+
 
 export default database;

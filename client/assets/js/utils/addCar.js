@@ -3,6 +3,9 @@
 import compSelectbox from "../components/selectbox.js";
 import createInputField from "../components/inputData.js";
 import createCheckboxes from "../components/checkboxes.js";
+import carApi from "../APIs/carApi.js";
+import Car from "../classes/car.js";
+
 import golbalData from "../golbalData.js";
 import elements from "../elements.js";
 import dom from "../dom.js";
@@ -153,21 +156,35 @@ const addCar = () => {
     /* cat data object*/
     let carID="car-" + Date.now()+createNumber(100,999);
     golbalData.currentCarId=carID;
-    const carsData = {
+    const jsonCar = {
         creationDate: new Date().toISOString(),
         modificationDate: new Date().toISOString(),
         carId: carID,
         userId: golbalData.currentUserId,
         attributes:carData,
-        imageURL:imageName        ,
+        imageURL:imageName,
              };
+             const newCar = Car.fromJson(jsonCar);
+            // const newCar =new  Car(jsonCar);
 
-      const blob = new Blob([JSON.stringify(carsData, null, 2)], {
+             console.log("newCar", newCar);
+             carApi.createCar(newCar)
+               .then((response) => {
+                 console.log("response :", response);
+                 //const users = response.map((user) => User.fromJson(user));
+                  //  const createdUser = carR.fromJson(response);
+                // console.log("Users:", users);
+               })
+               .catch((error) => {
+                 console.error("Error creating user:", error.message);
+               });
+
+      const blob = new Blob([JSON.stringify(jsonCar, null, 2)], {
         type: "application/json",
       });
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = `${carsData.carId}.json`;
+      a.download = `${jsonCar.carId}.json`;
       a.click();
 
 

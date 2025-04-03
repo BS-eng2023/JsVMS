@@ -124,8 +124,8 @@ const addUser = () => {
     userApi.createUser(newUser)
       .then((response) => {
         console.log("response :", response);
-      //  const users = response.map((user) => User.fromJson(user));
-        //   const createdUser = User.fromJson(response);
+        const users = response.map((user) => User.fromJson(user));
+        const createdUser = User.fromJson(response);
        // console.log("Users:", users);
       })
       .catch((error) => {

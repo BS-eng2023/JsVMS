@@ -4,6 +4,8 @@ import express from "express";
 import fs from "fs";
 import betterOpn from "better-opn";
 import userRouter from "./routes/userRoutes.js";
+import carRouter from "./routes/carRoutes.js";
+
 //import userRouter from './routes/index.js';
 import database from "./db/connection.js";
 
@@ -35,6 +37,7 @@ server.use(
 
 server.use(express.json());
 server.use(userRouter);
+server.use(carRouter);
 //
 const init = () => {
   // Erste die Datenbanken erzeugen ...
@@ -44,7 +47,7 @@ const init = () => {
       if (err) console.log(err);
       else {
         console.log("Server läuft");
-        betterOpn("http://localhost:8080");
+        //betterOpn("http://localhost:8080");
       }
     });
   });
