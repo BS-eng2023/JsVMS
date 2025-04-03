@@ -41,8 +41,8 @@ class Car extends Vehicle {
    static fromJson(json) {
     return new Car({
         _id: json.carId,
-       // userId: json.userId,
-        userId: "user"+(json.carId),
+        userId: json.userId,
+      //  userId: "user"+(json.carId),
         creationDate: new Date(json.creationDate),
         modificationDate: new Date(json.modificationDate),
         imageURL: json.imageURL,

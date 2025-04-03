@@ -15,12 +15,9 @@ const pathErr = "./log/error.log";
 const server = express();
 
 server.use((request, response, next) => {
-  // console.log(`Pfad wurde nicht gefunden: ${request.url}`);
-  // Der geladene Pfad soll in eine Text-Datei ausgegeben werden
+
   let logContent = `${new Date().toLocaleString()} - ${request.url}\n`;
 
-  // NodeJS bezieht seine Pfade immer auf das Betriebssystem
-  // Ordner werden nicht automatisch angelegt
   fs.appendFile(pathLog, logContent, (err) => {
     if (err) {
       console.warn(err);
@@ -47,7 +44,7 @@ const init = () => {
       if (err) console.log(err);
       else {
         console.log("Server läuft");
-        //betterOpn("http://localhost:8080");
+        betterOpn("http://localhost:8080");
       }
     });
   });

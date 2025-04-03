@@ -1,8 +1,5 @@
 'use strict';
 
-
-
-
 const userApi = {
     savePageVisit(visit) {
         return fetch('/savePageVisit', {
@@ -31,6 +28,21 @@ const userApi = {
             return response.json();
         })
         .then(data => data.payload);
+    },
+    loadAllUsers() {
+        return fetch('/loadAllUsers')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.status === 'error') {
+                    throw new Error(data.error || 'Failed to load users');
+                }
+                return data.payload;
+            });
     },
 
     getUser(userId) {

@@ -23,8 +23,10 @@ const database = {
         );
     },
 
+//////////////////////////////
+    // user DB methods//
+//////////////////////////////
 
-    // user DB methods
     saveUser(userData) {
         const dbUsers = dbConn.use('vms');
                 return dbUsers.insert(userData);
@@ -34,11 +36,16 @@ const database = {
         const dbUsers = dbConn.use('vms');
         return dbUsers.get('vms');
     },
-
+///
     loadAllUsers() {
         const dbUsers = dbConn.use('vms');
         
-        return dbUsers.list({ include_docs: true }).then(
+        return dbUsers.list({ include_docs: true,
+            startkey: 'user-',
+            endkey: 'user-\uffff'  // \uffff ensures we get all IDs starting with 'car-'
+
+            
+         }).then(
             result => result.rows.map(row => row.doc)
         );
     },
@@ -63,7 +70,10 @@ const database = {
         );
     },
 
-    // car DB methods
+
+    //////////////////////////////
+    // car DB methods//
+    //////////////////////////////
         saveCar(carData) {
             const dbCars = dbConn.use('vms');  'vms'
             return dbCars.insert(carData);
@@ -77,7 +87,10 @@ const database = {
         loadAllCars() {
             const dbCars = dbConn.use('vms');
             
-            return dbCars.list({ include_docs: true }).then(
+            return dbCars.list({ include_docs: true ,
+                startkey: 'car-',
+                endkey: 'car-\uffff'  // \uffff ensures we get all IDs starting with 'car-'
+            }).then(
                 result => result.rows.map(row => row.doc)
             );
         },

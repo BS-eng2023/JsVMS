@@ -3,6 +3,7 @@ import createInputField from "../components/inputData.js";
 import golbalData from "../golbalData.js";
 import dom from "../dom.js";
 import elements from "../elements.js";
+import userApi from "../APIs/userApi.js";
 
 const logIn = () => {
   elements.main.innerHTML = "";
@@ -57,6 +58,55 @@ const logIn = () => {
     //const loginSuccess = confirm("Login erfolgreich?"); // Simulierte Login-Bestätigung
     let loginSuccess = false;
     let users = null;
+
+
+    // Login function
+    userApi.loadAllUsers()
+    .then((users) => {
+      // Clear previous messages
+      Element.innerText = '';
+      Element.className = 'login-message'; // Reset classes
+      
+      // Find user by username (case-sensitive)
+      const user = users.find(user => 
+        user.attributes.userName.trim() === currentName.value.trim()
+      );
+  
+      if (user) {
+        golbalData.currentUserId=user._id.trim()
+        // Basic password check (in real apps, use hashed passwords!)
+        if (user.attributes.userPassword === currentPassword.value) {
+          // Successful login
+          Element.innerText = `Login successful! Welcome, ${currentName.value}!`;
+          Element.classList.add("login-message", "login-success");
+          
+          loginSuccess = true;
+          isLoggedIn = true;
+          addNewCarButton.disabled = false;
+          addNewCarButton.title = "Jetzt können Sie ein neues Auto hinzufügen!";
+        } else {
+          // Wrong password
+          Element.innerText = "Invalid password. Please try again.";
+          Element.classList.add("login-message", "login-error");
+          loginSuccess = false;
+        }
+      } else {
+        // User not found
+        Element.innerText = "Username not found. Please try again.";
+        Element.classList.add("login-message", "login-error");
+        loginSuccess = false;
+      }
+  
+      // Append message to DOM
+      elements.main.appendChild(Element);
+    })
+    .catch((error) => {
+      console.error("Error loading user data:", error);
+      Element.innerText = "Login service unavailable. Please try later.";
+      Element.classList.add("login-message", "login-error");
+      elements.main.appendChild(Element);
+    });
+/*
     // Login function
     fetch("./assets/json/users.json")
       .then((response) => response.json())
@@ -87,7 +137,7 @@ const logIn = () => {
       })
      
       .catch((error) => console.error("Error loading the JSON file:", error));
-
+*/
     // Find the user in the array
     //const user = elements.data.find(user => elements.data.attributes ["userName"] === username);
 

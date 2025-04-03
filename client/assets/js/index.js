@@ -53,10 +53,7 @@ const init = () => {
   appendEventListeners();
   logIn();
   
-  carApi.loadAllCars()
-
-  
-    .then(cars => {
+  carApi.loadAllCars().then(cars => {
       console.log('Loaded cars:', cars);
       // Work with your cars data here
     elements.data = cars;
@@ -67,9 +64,9 @@ const init = () => {
     // Handle errors here
   });
 
-/*     
-//load from json file 
-// fetch("../assets/json/sample_cars.json")
+    
+/* //load from json file 
+fetch("../assets/json/sample_cars.json")
     .then((response) => response.json())
     .then((data) => {
       elements.data = data;
