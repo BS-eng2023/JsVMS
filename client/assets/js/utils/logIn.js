@@ -102,7 +102,7 @@ const logIn = () => {
     })
     .catch((error) => {
       console.error("Error loading user data:", error);
-      Element.innerText = "Login service unavailable. Please try later.";
+      Element.innerText = "Invalid username or password. Please try again..";
       Element.classList.add("login-message", "login-error");
       elements.main.appendChild(Element);
     });
