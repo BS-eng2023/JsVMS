@@ -10,8 +10,8 @@ function populateFilters(carsData) {
     const fuels = new Set();
     
     carsData.forEach(car => {
-        brands.add(car.attributes["Marken"]);
-        fuels.add(car.attributes["Kraftstoffe :"]);
+        brands.add(car.attributes["brand"]);
+        fuels.add(car.attributes["fuelType"]);
     });
     
     brands.forEach(brand => {

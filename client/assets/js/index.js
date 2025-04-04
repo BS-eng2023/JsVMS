@@ -57,6 +57,8 @@ const init = () => {
       console.log('Loaded cars:', cars);
       // Work with your cars data here
     elements.data = cars;
+    console.error('elements.data', elements.data);
+
     populateFilters(cars);
     displayCars(cars);})
   .catch(error => {

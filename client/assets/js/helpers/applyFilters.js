@@ -34,6 +34,17 @@ function applyFilters(carsDatas) {
 
   const filteredCars = carsDatas.filter((car) => {
     return (
+      car.attributes["yearOfManufacture"] >= registrationMin &&
+      car.attributes["yearOfManufacture"] <= registrationMax &&
+      car.attributes["mileAge"] >= mileageMin &&
+      car.attributes["mileAge"] <= mileageMax &&
+      car.attributes["title"].toLowerCase().includes(searchQuery) &&
+      (brandFilter === "" || car.attributes["brand"] === brandFilter) &&
+      (fuelFilter === "" || car.attributes["fuelType"] === fuelFilter)
+    );
+   });  
+   /*const filteredCars = carsDatas.filter((car) => {
+    return (
       car.attributes["Baujahre"] >= registrationMin &&
       car.attributes["Baujahre"] <= registrationMax &&
       car.attributes["mileage"] >= mileageMin &&
@@ -42,7 +53,7 @@ function applyFilters(carsDatas) {
       (brandFilter === "" || car.attributes["Marken"] === brandFilter) &&
       (fuelFilter === "" || car.attributes["Kraftstoffe :"] === fuelFilter)
     );
-  });
+  }); */
   if (filteredCars.length > 0) {
     displayCars(filteredCars);
     const filterButton = document.querySelector(".applyFilters");
@@ -59,7 +70,7 @@ function applyFilters(carsDatas) {
 }
 export default applyFilters;
 
-const registrationMin =
+/* const registrationMin =
   parseFloat(document.getElementById("registration-min").value) || 0;
 const registrationMax =
   parseFloat(document.getElementById("registration-max").value) || Infinity;
@@ -67,3 +78,4 @@ const mileageMin =
   parseFloat(document.getElementById("mileage-min").value) || 0;
 const mileageMax =
   parseFloat(document.getElementById("mileage-max").value) || Infinity;
+ */
